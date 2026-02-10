@@ -3,29 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Curso Viver de Cílios | 4 Técnicas + Certificado</title>
-  <meta name="description" content="Aprenda Extensão de Cílios online: Fio a Fio, Volume Russo, Híbrido e Volume Brasileiro. Materiais em PDF, fichas e certificado." />
+  <title>Curso Extensão de Cílios Online | 4 Técnicas + Certificado</title>
+  <meta name="description" content="Curso online de extensão de cílios com 4 técnicas (Fio a Fio, Volume Russo, Híbrido e Brasileiro), apostila e suporte. Garanta sua vaga." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#ff4fa3" />
 
   <style>
     :root{
-      --bg:#ffffff;
-      --bg2:#f7f7fb;
-      --card:#ffffff;
-      --text:#12121a;
-      --muted:#5b5b6a;
-      --line:rgba(18,18,26,.10);
-
-      --gold:#d3a62f;
-      --gold2:#f1d67a;
-
-      --green:#18a95d;
-      --green2:#22c26d;
+      --bg:#0b0b12;
+      --card:#121225;
+      --card2:#171733;
+      --text:#f7f7fb;
+      --muted:#b9b9cf;
+      --line:rgba(255,255,255,.08);
 
       --pink:#ff4fa3;
-      --shadow: 0 16px 45px rgba(0,0,0,.12);
-      --shadow2: 0 14px 40px rgba(24,169,93,.12);
+      --pink2:#ff79bd;
+      --gold:#f2c14e;
+
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --shadow2: 0 14px 40px rgba(255,79,163,.12);
       --radius: 18px;
       --radius2: 26px;
 
@@ -36,60 +33,28 @@
     html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(900px 520px at 15% -10%, rgba(255,79,163,.12), transparent 62%),
-        radial-gradient(900px 520px at 85% -10%, rgba(211,166,47,.10), transparent 62%),
-        linear-gradient(180deg, #ffffff 0%, #fbfbff 60%, #ffffff 100%);
+        radial-gradient(1200px 700px at 10% -10%, rgba(255,79,163,.28), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(242,193,78,.22), transparent 55%),
+        linear-gradient(180deg, #07070e 0%, #0b0b12 40%, #07070e 100%);
       overflow-x:hidden;
     }
 
-    a{color:inherit; text-decoration:none}
-    img, iframe {max-width:100%; height:auto;}
-
+    img, iframe, video { max-width:100%; height:auto; }
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
     .grid{display:grid; gap:18px}
 
-    header{
-      position:sticky; top:0; z-index:20;
-      background: rgba(255,255,255,.78);
-      backdrop-filter: blur(12px);
-      border-bottom:1px solid rgba(0,0,0,.06);
-    }
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 0; gap:14px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      font-weight:900; letter-spacing:.2px;
-      min-width:0;
-    }
-    .logo{
-      width:34px; height:34px; border-radius:12px;
-      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.1) 45%),
-                  linear-gradient(135deg, #ffd1ea, var(--gold2));
-      box-shadow: 0 12px 30px rgba(0,0,0,.10);
-      border:1px solid rgba(0,0,0,.08);
-      flex:0 0 auto;
-    }
-    nav{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
-    .navlink{
-      font-size:13px; color:var(--muted); font-weight:800;
-      padding:8px 10px; border-radius:12px;
-      border:1px solid transparent; transition:.12s;
-      white-space:nowrap;
-    }
-    .navlink:hover{color:var(--text); border-color: rgba(0,0,0,.10); background: rgba(0,0,0,.03)}
+    a{color:inherit; text-decoration:none}
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       gap:10px;
       padding:14px 18px;
       border-radius: 14px;
-      border:1px solid rgba(0,0,0,.10);
-      background: rgba(255,255,255,.9);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
       color:var(--text);
       font-weight:900;
       letter-spacing:.2px;
@@ -98,50 +63,109 @@
       user-select:none;
       white-space:nowrap;
     }
-    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow)}
+    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow2); border-color: rgba(255,79,163,.35)}
     .btn:active{transform: translateY(0)}
     .btn-primary{
-      background: linear-gradient(135deg, var(--green) 0%, var(--green2) 100%);
-      color:#ffffff;
-      border-color: transparent;
-      box-shadow: var(--shadow2);
+      background: linear-gradient(135deg, var(--pink) 0%, var(--pink2) 55%, #ffb3da 100%);
+      color:#0b0b12;
+      border-color: rgba(255,255,255,.0);
+      box-shadow: 0 18px 40px rgba(255,79,163,.22);
     }
-    .btn-primary:hover{box-shadow: 0 18px 50px rgba(24,169,93,.22)}
+    .btn-primary:hover{box-shadow: 0 18px 55px rgba(255,79,163,.32)}
     .btn-ghost{
-      background: rgba(0,0,0,.02);
-      border-color: rgba(0,0,0,.10);
+      background: rgba(255,255,255,.03);
+      border-color: rgba(255,255,255,.10);
     }
 
     .pill{
       display:inline-flex; align-items:center; gap:10px;
       padding:8px 12px;
       border-radius:999px;
-      border:1px solid rgba(0,0,0,.10);
-      background: rgba(255,255,255,.85);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
       color:var(--muted);
       font-weight:800;
       font-size:13px;
       flex-wrap:wrap;
     }
+    .pill b{color:var(--text)}
     .badge{
       display:inline-flex; align-items:center; justify-content:center;
       padding:6px 10px;
       border-radius:999px;
       font-weight:1000;
       font-size:12px;
-      background: rgba(211,166,47,.14);
-      border:1px solid rgba(211,166,47,.30);
-      color:#7a5a00;
+      background: rgba(242,193,78,.16);
+      border:1px solid rgba(242,193,78,.25);
+      color:#ffe1a0;
     }
 
-    /* HERO */
-    .hero{padding:28px 0 10px}
-    .heroGrid{grid-template-columns: 1.15fr .85fr; align-items:stretch}
-    @media (max-width: 920px){ .heroGrid{grid-template-columns:1fr} }
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(14px);
+      background: rgba(10,10,18,.62);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:1000;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      min-width:0;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.1) 40%),
+                  linear-gradient(135deg, var(--pink), var(--gold));
+      box-shadow: 0 18px 45px rgba(255,79,163,.18);
+      border:1px solid rgba(255,255,255,.18);
+      flex:0 0 auto;
+    }
+    nav{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .navlink{
+      font-size:13px; color:var(--muted); font-weight:900;
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+      transition:.12s;
+      white-space:nowrap;
+    }
+    .navlink:hover{color:var(--text); border-color: rgba(255,255,255,.12); background: rgba(255,255,255,.05)}
+
+    .hero{
+      padding:34px 0 18px;
+      position:relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(800px 400px at 10% 10%, rgba(255,79,163,.16), transparent 60%),
+        radial-gradient(700px 420px at 90% 30%, rgba(242,193,78,.10), transparent 55%);
+      pointer-events:none;
+      filter:saturate(1.2);
+      opacity:.9;
+    }
+    .hero .wrap{position:relative}
+
+    .heroGrid{
+      grid-template-columns: 1.2fr .8fr;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .heroGrid{grid-template-columns:1fr}
+    }
 
     .heroCard{
-      background: rgba(255,255,255,.92);
-      border:1px solid rgba(0,0,0,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.03) 100%);
+      border:1px solid rgba(255,255,255,.10);
       border-radius: var(--radius2);
       padding:22px;
       box-shadow: var(--shadow);
@@ -149,32 +173,44 @@
       overflow:hidden;
       min-width:0;
     }
+    .heroCard::after{
+      content:"";
+      position:absolute;
+      width:680px; height:680px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,79,163,.20), transparent 60%);
+      right:-430px; top:-460px;
+      transform: rotate(12deg);
+      pointer-events:none;
+    }
+
     h1{
-      margin:10px 0 10px;
-      font-size: clamp(26px, 6.2vw, 44px);
-      line-height:1.06;
+      margin:10px 0 12px;
+      font-size: clamp(26px, 6.2vw, 46px);
+      line-height:1.05;
       letter-spacing:-.6px;
       word-break:break-word;
     }
-    .accent{
-      color: var(--gold);
-      font-weight:1000;
+    .grad{
+      background: linear-gradient(90deg, #fff 0%, #ffd1ea 20%, #ff9fd2 55%, #ffe1a0 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
     }
     .sub{
       color: var(--muted);
       font-size: 15px;
       line-height:1.55;
-      margin:0 0 14px;
-      max-width: 70ch;
-      font-weight:700;
+      max-width: 60ch;
+      margin:0 0 16px;
     }
+
     .heroBullets{display:grid; gap:10px; margin: 14px 0 18px}
     .bullet{
       display:flex; gap:10px; align-items:flex-start;
       padding:10px 12px;
       border-radius: 14px;
-      background: rgba(0,0,0,.02);
-      border:1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
       color: var(--muted);
       font-weight:800;
       min-width:0;
@@ -182,11 +218,15 @@
     .dot{
       width:10px; height:10px; border-radius:99px;
       margin-top:4px;
-      background: linear-gradient(180deg, var(--green), var(--gold2));
-      box-shadow: 0 10px 20px rgba(24,169,93,.15);
+      background: linear-gradient(180deg, var(--pink), var(--gold));
+      box-shadow: 0 10px 20px rgba(255,79,163,.25);
       flex:0 0 auto;
     }
-    .heroActions{display:flex; gap:12px; flex-wrap:wrap; margin-top: 8px}
+
+    .heroActions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 10px;
+    }
     .miniTrust{
       display:flex; gap:10px; flex-wrap:wrap;
       margin-top: 14px;
@@ -196,21 +236,31 @@
     }
     .miniTrust span{
       padding:8px 10px;
-      background: rgba(0,0,0,.02);
-      border:1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
       border-radius:999px;
     }
 
-    /* TIMER */
+    /* Timer */
     .timerCard{
-      background: rgba(255,255,255,.92);
-      border:1px solid rgba(0,0,0,.08);
+      background: linear-gradient(180deg, rgba(255,79,163,.14) 0%, rgba(255,255,255,.04) 100%);
+      border:1px solid rgba(255,79,163,.28);
       border-radius: var(--radius2);
       padding:18px;
-      box-shadow: var(--shadow);
-      display:flex; flex-direction:column; gap:12px;
+      box-shadow: 0 18px 55px rgba(255,79,163,.12);
+      display:flex; flex-direction:column; gap:14px;
+      overflow:hidden;
+      position:relative;
       min-width:0;
     }
+    .timerCard::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 180px at 20% 0%, rgba(255,79,163,.22), transparent 60%),
+                  radial-gradient(420px 180px at 100% 40%, rgba(242,193,78,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .timerCard > *{position:relative}
     .timerTitle{
       display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
     }
@@ -221,18 +271,27 @@
       gap:10px;
     }
     .tbox{
-      background: rgba(0,0,0,.02);
-      border:1px solid rgba(0,0,0,.08);
+      background: rgba(10,10,18,.55);
+      border:1px solid rgba(255,255,255,.10);
       border-radius: 18px;
       padding:14px 10px;
       text-align:center;
       min-width:0;
     }
-    .tbox .n{font-size: 28px; font-weight: 1100; letter-spacing:.6px}
-    .tbox .l{color: var(--muted); font-weight:1000; font-size:12px; margin-top:2px}
-    .timerHint{color: var(--muted); font-weight:800; font-size:13px; line-height:1.5}
+    .tbox .n{
+      font-size: 28px;
+      font-weight: 1000;
+      letter-spacing: .6px;
+    }
+    .tbox .l{
+      color: var(--muted);
+      font-weight:900;
+      font-size:12px;
+      margin-top:2px;
+    }
+    .timerHint{color: var(--muted); font-weight:900; font-size:13px; line-height:1.45}
 
-    section{padding:22px 0}
+    section{padding:26px 0}
     .sectionTitle{
       display:flex; align-items:flex-end; justify-content:space-between; gap:10px; flex-wrap:wrap;
       margin-bottom:14px;
@@ -241,82 +300,105 @@
       margin:0;
       font-size: clamp(20px, 4.8vw, 30px);
       letter-spacing:-.4px;
-      font-weight:1100;
     }
-    .sectionTitle p{margin:0; color:var(--muted); font-weight:700; max-width: 75ch}
+    .sectionTitle p{margin:0; color:var(--muted); font-weight:800; max-width: 70ch}
 
-    /* cards */
-    .cards{grid-template-columns: repeat(3, 1fr)}
+    .cards{
+      grid-template-columns: repeat(3, 1fr);
+    }
     @media (max-width: 920px){ .cards{grid-template-columns:1fr} }
 
     .card{
-      background: rgba(255,255,255,.92);
-      border:1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
       border-radius: var(--radius2);
       padding:16px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+      position:relative;
+      overflow:hidden;
+      min-height: 150px;
       min-width:0;
     }
     .card h3{margin:0 0 8px; font-size:16px}
-    .card p{margin:0; color:var(--muted); line-height:1.55; font-weight:700}
+    .card p{margin:0; color:var(--muted); line-height:1.55; font-weight:800}
+    .card .icon{
+      width:40px; height:40px; border-radius:16px;
+      background: rgba(255,79,163,.14);
+      border:1px solid rgba(255,79,163,.18);
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:10px;
+      box-shadow: 0 18px 45px rgba(255,79,163,.10);
+    }
+    .icon svg{width:22px; height:22px; opacity:.95}
 
-    /* instructor - igual ao print */
+    /* Video grid */
+    .videoGrid{
+      grid-template-columns: repeat(2, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 920px){ .videoGrid{grid-template-columns:1fr} }
+    .video{
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
+      position:relative;
+      min-width:0;
+    }
+    .video::before{content:""; display:block; padding-top:56.25%;}
+    .video iframe{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      border:0;
+    }
+
+    /* Instructor */
     .instructor{
       display:grid;
-      grid-template-columns: 1fr 1.25fr;
+      grid-template-columns: .95fr 1.05fr;
       gap:16px;
-      background: rgba(255,255,255,.92);
-      border:1px solid rgba(0,0,0,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
       border-radius: var(--radius2);
+      padding:16px;
       box-shadow: var(--shadow);
       overflow:hidden;
       min-width:0;
     }
-    @media (max-width: 920px){ .instructor{grid-template-columns:1fr} }
-
-    .instLeft{
-      position:relative;
-      padding:16px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:center;
-      background:
-        radial-gradient(420px 260px at 20% 10%, rgba(255,79,163,.10), transparent 60%),
-        radial-gradient(420px 260px at 80% 10%, rgba(211,166,47,.10), transparent 60%),
-        linear-gradient(180deg, #ffffff, #fbfbff);
-    }
-
-    .instImg{
-      width:min(420px, 100%);
-      display:block;
-      filter: drop-shadow(0 18px 35px rgba(0,0,0,.18));
-      transform: translateY(6px);
-    }
-
-    .instRight{
-      padding:18px 18px 18px 6px;
-    }
     @media (max-width: 920px){
-      .instRight{padding:16px}
+      .instructor{grid-template-columns: 1fr}
     }
-
-    .instKicker{
-      font-weight:1000;
-      letter-spacing:.6px;
-      color:#15151d;
+    .instPhoto{
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(260px 160px at 20% 0%, rgba(255,79,163,.20), transparent 60%),
+        radial-gradient(260px 160px at 100% 40%, rgba(242,193,78,.12), transparent 60%),
+        rgba(255,255,255,.03);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px;
+      min-height:240px;
     }
-    .instName{
-      margin:6px 0 10px;
-      color: var(--gold);
-      font-weight:1200;
+    .instPhoto img{
+      width:100%;
+      height:auto;
+      border-radius: 18px;
+      display:block;
+      filter: drop-shadow(0 18px 35px rgba(0,0,0,.35));
+    }
+    .instInfo h3{
+      margin:0 0 6px;
       font-size: 22px;
       letter-spacing:-.2px;
     }
-    .instText{
+    .instInfo p{
+      margin:0 0 10px;
       color: var(--muted);
-      font-weight:700;
-      line-height:1.65;
-      margin:0 0 12px;
+      font-weight:800;
+      line-height:1.6;
     }
     .instStats{
       display:flex; gap:10px; flex-wrap:wrap;
@@ -324,67 +406,67 @@
     }
     .instStats span{
       padding:8px 10px;
-      background: rgba(0,0,0,.02);
-      border:1px solid rgba(0,0,0,.08);
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
       border-radius:999px;
       font-weight:1000;
-      color: rgba(18,18,26,.85);
+      color: rgba(255,255,255,.85);
       font-size:12px;
     }
-    .instActions{display:flex; gap:12px; flex-wrap:wrap; margin-top: 6px}
-
-    /* Videos */
-    .videoGrid{grid-template-columns: repeat(2, 1fr); gap:14px}
-    @media (max-width: 920px){ .videoGrid{grid-template-columns:1fr} }
-    .video{
-      border-radius: var(--radius2);
-      overflow:hidden;
-      border:1px solid rgba(0,0,0,.08);
-      background: rgba(255,255,255,.92);
-      box-shadow: var(--shadow);
-      position:relative;
-      min-width:0;
+    .instActions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 6px;
     }
-    .video::before{content:""; display:block; padding-top:56.25%}
-    .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+    .igIcon{width:18px; height:18px; display:inline-block;}
 
-    /* FAQ */
-    .faq{
-      background: rgba(255,255,255,.92);
-      border:1px solid rgba(0,0,0,.08);
+    /* FAQ estilo do print */
+    .faqWrap{
+      background: rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.08);
       border-radius: var(--radius2);
-      overflow:hidden;
+      padding: 14px;
       box-shadow: var(--shadow);
     }
-    .faqItem{border-top:1px solid rgba(0,0,0,.08)}
-    .faqItem:first-child{border-top:none}
+    .faqItem{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      margin: 12px 0;
+      overflow:hidden;
+      box-shadow: 0 18px 35px rgba(0,0,0,.25);
+    }
     .faqQ{
       display:flex; align-items:center; justify-content:space-between; gap:14px;
-      padding:16px;
+      padding:16px 16px;
       cursor:pointer;
       font-weight:1000;
       letter-spacing:-.2px;
+      min-width:0;
     }
     .faqQ span{min-width:0}
     .chev{
       width:34px; height:34px; border-radius: 14px;
-      border:1px solid rgba(0,0,0,.10);
-      background: rgba(0,0,0,.02);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
       display:flex; align-items:center; justify-content:center;
       transition: transform .15s ease;
       flex:0 0 auto;
     }
-    .faqA{max-height:0; overflow:hidden; transition: max-height .22s ease}
+    .faqA{
+      max-height:0;
+      overflow:hidden;
+      transition: max-height .22s ease;
+    }
     .faqA > div{
       padding:0 16px 16px;
       color: var(--muted);
       line-height:1.65;
-      font-weight:700;
+      font-weight:800;
     }
     .faqItem.open .faqA{max-height:520px}
     .faqItem.open .chev{transform: rotate(180deg)}
 
-    /* sticky CTA */
+    /* Sticky CTA */
     .ctaStrip{
       position:sticky;
       bottom:12px;
@@ -400,48 +482,52 @@
       gap:12px;
       padding:12px 12px;
       border-radius: 18px;
-      background: rgba(255,255,255,.85);
-      border:1px solid rgba(0,0,0,.08);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow);
+      background: rgba(10,10,18,.72);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
     }
-    .ctaLeft{display:flex; flex-direction:column; gap:2px; min-width:0}
+    .ctaLeft{display:flex; flex-direction:column; gap:2px; min-width: 0;}
     .ctaLeft b{font-size:13px}
     .ctaLeft small{color: var(--muted); font-weight:900}
 
     footer{
-      padding:22px 0 56px;
+      padding:26px 0 56px;
       color: var(--muted);
-      border-top: 1px solid rgba(0,0,0,.06);
+      border-top: 1px solid rgba(255,255,255,.06);
       margin-top: 18px;
     }
-    .disclaimer{font-size:12px; line-height:1.6; opacity:.95}
-    .note{font-size:12px; color: rgba(0,0,0,.60); font-weight:900; margin-top:10px}
+    footer a{color:#ffd1ea; font-weight:1000}
+    .disclaimer{
+      font-size:12px;
+      line-height:1.6;
+      opacity:.95;
+      font-weight:800;
+    }
+    .note{
+      font-size:12px;
+      color: rgba(255,255,255,.65);
+      font-weight:900;
+      margin-top:10px;
+    }
 
-    /* MOBILE FIXES */
+    /* MOBILE FIX PACK */
     @media (max-width: 720px){
       .wrap{padding:0 14px}
-      .topbar{flex-direction:column; align-items:flex-start; gap:10px}
-      nav{width:100%; justify-content:flex-start; gap:8px}
-      nav .btn{width:100%; white-space:normal}
-
-      .hero{padding:16px 0 10px}
+      .topbar{flex-direction:column; align-items:flex-start; gap:10px;}
+      nav{width:100%; justify-content:flex-start; gap:8px;}
+      nav .btn{width:100%; white-space:normal;}
+      .hero{padding:18px 0 10px}
       .heroCard{padding:16px}
       .timerCard{padding:14px}
-      .heroActions .btn{width:100%; white-space:normal}
-
+      .heroActions .btn{width:100%; white-space:normal;}
       .miniTrust span{flex:1 1 auto; text-align:center}
-
-      .tbox{padding:12px 8px; border-radius:16px}
       .tbox .n{font-size:24px}
-
-      .instLeft{padding:10px}
-      .instImg{transform:none}
-
-      .ctaInner{flex-direction:column; align-items:stretch; gap:10px}
+      section{padding:18px 0}
+      .sectionTitle p{font-size:13px; line-height:1.5}
+      .ctaInner{flex-direction:column; align-items:stretch; gap:10px;}
       .ctaLeft{align-items:center; text-align:center}
-      .ctaInner .btn{width:100%; white-space:normal}
-
+      .ctaInner .btn{width:100%; white-space:normal;}
       footer{padding-bottom:84px}
     }
   </style>
@@ -463,7 +549,7 @@
         <a class="navlink" href="#professora">Professora</a>
         <a class="navlink" href="#videos">Vídeos</a>
         <a class="navlink" href="#faq">Perguntas</a>
-        <a class="btn btn-primary" data-cta href="#">QUERO CONHECER OS PLANOS</a>
+        <a class="btn btn-primary" data-cta href="#">Quero conhecer os planos</a>
       </nav>
     </div>
   </header>
@@ -473,28 +559,27 @@
       <div class="wrap grid heroGrid">
         <div class="heroCard">
           <div class="pill">
-            <span class="badge">OFERTA</span>
-            <span><b>Promoção ativa</b> • aproveite enquanto o timer está rodando</span>
+            <span class="badge">PROMO</span>
+            <span><b>Oferta por tempo limitado</b> • garanta sua vaga hoje</span>
           </div>
 
-          <h1>TRANSFORME-SE EM UMA <span class="accent">MASTER</span> EM EXTENSÃO DE CÍLIOS</h1>
-
+          <h1 class="grad">Transforme-se em uma Master em Extensão de Cílios</h1>
           <p class="sub">
-            Aprenda as técnicas mais procuradas e tenha estrutura para evoluir com segurança:
-            <b>Fio a Fio</b>, <b>Volume Russo</b>, <b>Volume Híbrido</b> e <b>Volume Brasileiro</b>.
-            Inclui materiais em PDF, fichas e certificado.
+            Curso completo com <b>4 técnicas</b> (Fio a Fio, Volume Russo, Híbrido e Volume Brasileiro),
+            apostila em PDF, fichas de atendimento e suporte.
+            <b>Estude no seu ritmo</b> e comece a atender com mais segurança.
           </p>
 
           <div class="heroBullets">
-            <div class="bullet"><span class="dot"></span><div><b>Do zero ao avançado</b> — passo a passo, organizado.</div></div>
-            <div class="bullet"><span class="dot"></span><div><b>Conteúdo prático</b> — para aplicar de verdade e evoluir técnica.</div></div>
-            <div class="bullet"><span class="dot"></span><div><b>Certificado</b> — mais credibilidade ao concluir o curso.</div></div>
+            <div class="bullet"><span class="dot"></span><div><b>Do zero ao avançado</b> — passo a passo, sem enrolação.</div></div>
+            <div class="bullet"><span class="dot"></span><div><b>Conteúdo prático</b> — técnica + aplicação para evoluir rápido.</div></div>
+            <div class="bullet"><span class="dot"></span><div><b>Certificado</b> — mais credibilidade na sua jornada profissional.</div></div>
           </div>
 
           <div class="heroActions">
-            <a class="btn btn-primary" data-cta href="#">QUERO GARANTIR MINHA VAGA</a>
-            <a class="btn btn-ghost" href="#videos">Ver vídeos de alunas</a>
-            <a class="btn btn-ghost" href="#professora">Conhecer a professora</a>
+            <a class="btn btn-primary" data-cta href="#">Quero conhecer os planos</a>
+            <a class="btn" href="#videos">Ver vídeos de alunas</a>
+            <a class="btn" href="#professora">Conhecer a professora</a>
           </div>
 
           <div class="miniTrust">
@@ -512,7 +597,7 @@
         <aside class="timerCard" aria-label="Contagem regressiva da oferta">
           <div class="timerTitle">
             <h3>⏳ Promoção expira em:</h3>
-            <span class="pill" title="Timer individual por visitante">Timer individual</span>
+            <span class="pill" title="Timer por visitante">Timer individual</span>
           </div>
 
           <div class="timer" role="timer" aria-live="polite">
@@ -531,11 +616,12 @@
           </div>
 
           <p class="timerHint">
-            Se fizer sentido pra você, clique e veja os planos. Quando o tempo acabar, o timer reinicia para uma nova janela (por visitante).
+            Quer entrar com mais vantagem? Clique agora e confira os planos.
+            Quando o tempo zerar, o timer reinicia (por visitante).
           </p>
 
-          <a class="btn btn-primary" data-cta href="#">QUERO CONHECER OS PLANOS</a>
-          <a class="btn btn-ghost" href="#conteudo">Ver o que está incluso</a>
+          <a class="btn btn-primary" data-cta href="#">Quero garantir agora</a>
+          <a class="btn" href="#conteudo">Ver o que está incluso</a>
         </aside>
       </div>
     </section>
@@ -543,28 +629,39 @@
     <section id="conteudo">
       <div class="wrap">
         <div class="sectionTitle">
-          <h2>O que você terá acesso</h2>
+          <h2>O que você vai receber no curso</h2>
           <p>Um pacote completo para aprender, treinar e evoluir com mais confiança e organização.</p>
         </div>
 
         <div class="grid cards">
           <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="white" stroke-opacity=".9" stroke-width="1.7"/><path d="M8 8h8M8 12h8M8 16h6" stroke="white" stroke-opacity=".75" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
             <h3>4 Técnicas completas</h3>
-            <p>Fio a Fio • Volume Russo • Volume Híbrido • Volume Brasileiro — com direcionamento e prática.</p>
+            <p>Fio a Fio • Volume Russo • Híbrido • Volume Brasileiro (com direcionamento para execução).</p>
           </div>
+
           <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 3 7v6c0 5 4 8 9 8s9-3 9-8V7l-9-4Z" stroke="white" stroke-opacity=".9" stroke-width="1.7"/><path d="M8.5 12l2.2 2.2L15.5 9.4" stroke="white" stroke-opacity=".85" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
             <h3>Apostila + Fichas</h3>
-            <p>Apostila em PDF, ficha de cuidados e ficha de anamnese para organizar seu atendimento.</p>
+            <p>Apostila em PDF, ficha de cuidados e ficha de anamnese para atender com mais profissionalismo.</p>
           </div>
+
           <div class="card">
-            <h3>Certificado</h3>
-            <p>Garanta sua certificação ao concluir o curso (conforme regras do produtor/plataforma).</p>
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a6 6 0 0 1 6 6c0 2.2-1.2 4.2-3 5.2V16a3 3 0 0 1-6 0v-2.8A6 6 0 0 1 12 2Z" stroke="white" stroke-opacity=".9" stroke-width="1.7"/><path d="M9 20h6" stroke="white" stroke-opacity=".8" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Suporte + evolução</h3>
+            <p>Suporte técnico (conforme regras do produtor) e organização de estudo para você evoluir com constância.</p>
           </div>
         </div>
 
         <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" data-cta href="#">QUERO CONHECER OS PLANOS</a>
-          <a class="btn btn-ghost" href="#faq">Ver perguntas frequentes</a>
+          <a class="btn btn-primary" data-cta href="#">Quero conhecer os planos</a>
+          <a class="btn" href="#faq">Ver perguntas frequentes</a>
         </div>
       </div>
     </section>
@@ -572,40 +669,44 @@
     <section id="professora">
       <div class="wrap">
         <div class="sectionTitle">
-          <h2>Aprenda com quem sabe</h2>
-          <p>Credibilidade e ensino estruturado para você evoluir com clareza e confiança.</p>
+          <h2>Aprenda com quem sabe: Larissa Costa</h2>
+          <p>Credibilidade + metodologia: um curso com estrutura para você aprender com clareza e segurança.</p>
         </div>
 
         <div class="instructor">
-          <div class="instLeft">
-            <img class="instImg" src="/larissa.png" alt="Larissa Costa" loading="lazy" />
+          <div class="instPhoto" aria-label="Foto da professora Larissa Costa">
+            <!-- A imagem precisa estar no root do projeto com esse nome -->
+            <img src="/Larissa-Costa1.png" alt="Larissa Costa - professora do curso" loading="lazy" />
           </div>
 
-          <div class="instRight">
-            <div class="instKicker">APRENDA COM QUEM SABE...</div>
-            <div class="instName">LARISSA COSTA</div>
-
-            <p class="instText">
-              Conteúdo organizado para você sair do básico com segurança e evoluir técnica com método.
-              A ideia aqui é: <b>clareza + prática</b> — para você aprender no seu ritmo e aplicar de verdade.
+          <div class="instInfo">
+            <h3>Larissa Costa</h3>
+            <p>
+              Uma referência no nicho de beleza, com ensino estruturado para você sair do “não sei por onde começar”
+              e avançar com técnica, método e prática.
             </p>
 
             <div class="instStats">
-              <span>📌 Metodologia</span>
-              <span>📚 Materiais PDF</span>
-              <span>🧾 Certificado</span>
+              <span>📌 Passo a passo</span>
+              <span>🧾 Certificado ao concluir</span>
+              <span>📚 Materiais e fichas</span>
               <span>💬 Suporte</span>
             </div>
 
             <div class="instActions">
-              <a class="btn btn-primary" data-cta href="#">QUERO CONHECER OS PLANOS</a>
-              <a class="btn btn-ghost" data-ig href="#" aria-label="Instagram da Larissa (link rastreado)">
+              <a class="btn btn-primary" data-cta href="#">Quero conhecer os planos</a>
+              <a class="btn btn-ghost" data-ig href="#">
+                <svg class="igIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="white" stroke-opacity=".85" stroke-width="1.6"/>
+                  <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="white" stroke-opacity=".85" stroke-width="1.6"/>
+                  <path d="M17.5 6.5h.01" stroke="white" stroke-opacity=".85" stroke-width="3.2" stroke-linecap="round"/>
+                </svg>
                 Instagram da Larissa
               </a>
             </div>
 
             <div class="note">
-              *Link abre em nova aba. Conteúdo educacional; resultados variam.
+              *Conteúdo educacional; resultados variam. Botão abre em nova aba.
             </div>
           </div>
         </div>
@@ -615,15 +716,15 @@
     <section id="videos">
       <div class="wrap">
         <div class="sectionTitle">
-          <h2>Veja alguns exemplos em vídeo</h2>
-          <p>Vídeos reais aumentam confiança — veja antes de decidir.</p>
+          <h2>Veja exemplos (vídeos)</h2>
+          <p>Antes de decidir, veja exemplos reais para aumentar sua confiança.</p>
         </div>
 
         <div class="grid videoGrid" id="videoGrid"></div>
 
         <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" data-cta href="#">QUERO GARANTIR MINHA VAGA</a>
-          <a class="btn btn-ghost" href="#faq">Ainda tenho dúvidas</a>
+          <a class="btn btn-primary" data-cta href="#">Quero garantir minha vaga</a>
+          <a class="btn" href="#faq">Ainda tenho dúvidas</a>
         </div>
       </div>
     </section>
@@ -632,10 +733,10 @@
       <div class="wrap">
         <div class="sectionTitle">
           <h2>Perguntas frequentes</h2>
-          <p>Respostas diretas para você decidir com segurança.</p>
+          <p>Respostas claras para você decidir com segurança.</p>
         </div>
 
-        <div class="faq" role="list">
+        <div class="faqWrap" role="list">
           <div class="faqItem open" role="listitem">
             <div class="faqQ">
               <span>É possível aprender Extensão de Cílios online?</span>
@@ -643,20 +744,20 @@
             </div>
             <div class="faqA">
               <div>
-                Sim. O curso é estruturado para você acompanhar com clareza, revisar e praticar no seu ritmo.
-                O resultado depende da sua dedicação e prática.
+                Sim. O curso é estruturado para você assistir com clareza, revisar quantas vezes quiser e praticar no seu ritmo.
+                O avanço depende da sua dedicação e prática.
               </div>
             </div>
           </div>
 
           <div class="faqItem" role="listitem">
             <div class="faqQ">
-              <span>Preciso ter experiência para começar?</span>
+              <span>Para fazer o curso é preciso ter experiência?</span>
               <div class="chev" aria-hidden="true">⌄</div>
             </div>
             <div class="faqA">
               <div>
-                Não. Serve para iniciantes e também para quem já começou e quer evoluir técnica e resultado.
+                Não. Ele atende iniciantes e também quem já trabalha na área e quer evoluir técnica e resultado.
               </div>
             </div>
           </div>
@@ -668,19 +769,43 @@
             </div>
             <div class="faqA">
               <div>
-                Após a confirmação do pagamento, você recebe as instruções de acesso por e-mail (conforme regras do produtor/plataforma).
+                Após a aprovação do pagamento, você recebe as instruções e acesso por e-mail (conforme regras da plataforma do produtor).
               </div>
             </div>
           </div>
 
           <div class="faqItem" role="listitem">
             <div class="faqQ">
-              <span>Como recebo o certificado?</span>
+              <span>Preciso ter materiais antes de iniciar?</span>
               <div class="chev" aria-hidden="true">⌄</div>
             </div>
             <div class="faqA">
               <div>
-                O certificado é disponibilizado conforme as regras e conclusão do curso na plataforma do produtor.
+                Você pode iniciar entendendo o processo e organizar seus materiais conforme for evoluindo. O ideal é praticar com método e constância.
+              </div>
+            </div>
+          </div>
+
+          <div class="faqItem" role="listitem">
+            <div class="faqQ">
+              <span>Em quanto tempo vou aprender?</span>
+              <div class="chev" aria-hidden="true">⌄</div>
+            </div>
+            <div class="faqA">
+              <div>
+                Depende do seu ritmo e da prática. Quem pratica consistentemente evolui mais rápido do que quem apenas assiste.
+              </div>
+            </div>
+          </div>
+
+          <div class="faqItem" role="listitem">
+            <div class="faqQ">
+              <span>Como vou receber meu certificado?</span>
+              <div class="chev" aria-hidden="true">⌄</div>
+            </div>
+            <div class="faqA">
+              <div>
+                O certificado é disponibilizado conforme as regras de conclusão do curso na plataforma do produtor.
               </div>
             </div>
           </div>
@@ -697,9 +822,9 @@
       <div class="ctaInner">
         <div class="ctaLeft">
           <b>Oferta ativa agora • Garanta sua vaga</b>
-          <small>Sem redirecionamento automático — você clica quando quiser ✅</small>
+          <small>Você clica quando quiser ✅</small>
         </div>
-        <a class="btn btn-primary" data-cta href="#">QUERO GARANTIR AGORA</a>
+        <a class="btn btn-primary" data-cta href="#">Quero garantir agora</a>
       </div>
     </div>
   </main>
@@ -723,7 +848,12 @@
     const BASE_CHECKOUT_URL = "https://go.hotmart.com/D104345925A?ap=a455";
     const INSTAGRAM_TRACK_URL = "https://go.hotmart.com/D104345925A?ap=fea9";
 
-    const YOUTUBE_IDS = ["GdSbvodFstE","IetdHtgrzAI","T8u4hxys8bE","wJNOSafjI6A"];
+    const YOUTUBE_IDS = [
+      "GdSbvodFstE",
+      "IetdHtgrzAI",
+      "T8u4hxys8bE",
+      "wJNOSafjI6A",
+    ];
 
     // Timer: 5 minutos
     const TIMER_DURATION_MS = 5 * 60 * 1000;
@@ -733,29 +863,25 @@
     // ==============================
     function buildCheckoutUrl() {
       const params = new URLSearchParams(window.location.search);
-
-      const keys = ["gclid","utm_source","utm_campaign","utm_medium","utm_term","utm_content"];
       const checkout = new URL(BASE_CHECKOUT_URL);
 
-      keys.forEach(k => {
+      ["gclid","utm_source","utm_campaign","utm_medium","utm_term","utm_content"].forEach((k) => {
         const v = params.get(k);
         if (v) checkout.searchParams.set(k, v);
       });
 
-      checkout.searchParams.set("src","google_ads");
+      checkout.searchParams.set("src", "google_ads");
       return checkout.toString();
     }
 
     const CHECKOUT_URL = buildCheckoutUrl();
 
-    // CTAs de compra -> checkout
     document.querySelectorAll("[data-cta]").forEach(a => {
       a.href = CHECKOUT_URL;
       a.rel = "nofollow sponsored";
       a.target = "_blank";
     });
 
-    // Instagram / credibilidade -> link rastreado
     document.querySelectorAll("[data-ig]").forEach(a => {
       a.href = INSTAGRAM_TRACK_URL;
       a.rel = "nofollow sponsored";
@@ -772,7 +898,7 @@
       div.innerHTML = `
         <iframe
           src="https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&playsinline=1"
-          title="Vídeo de exemplo"
+          title="Vídeo - exemplos"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
           loading="lazy"></iframe>
@@ -796,6 +922,7 @@
     // TIMER 5 MIN (persistente por visitante)
     // ==============================
     const LS_KEY = "promo_timer_end_v2";
+
     function getEndTime() {
       const now = Date.now();
       const stored = Number(localStorage.getItem(LS_KEY) || 0);
@@ -808,7 +935,6 @@
     }
 
     let endTime = getEndTime();
-
     const tMin = document.getElementById("tMin");
     const tSec = document.getElementById("tSec");
     const tMs  = document.getElementById("tMs");
