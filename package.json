@@ -1,9 +1,13 @@
 {
-  "name": "landing-cilios",
+  "name": "cilios-landing",
   "version": "1.0.0",
   "private": true,
+  "description": "Landing page para campanha Google Ads (Render) com CTA Hotmart",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

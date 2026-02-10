@@ -1,34 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Curso Viver de Cílios — Aprenda Extensão de Cílios Online</title>
-  <meta name="description" content="Aprenda técnicas de extensão de cílios (fio a fio, volumes e híbridos) com aulas online e suporte. Clique e veja os planos." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Curso Viver de Cílios — Extensão de Cílios Online" />
-  <meta property="og:description" content="Aprenda técnicas profissionais de extensão de cílios com aulas online e suporte." />
-  <meta property="og:type" content="website" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso Extensão de Cílios Online | Aprenda 4 Técnicas + Certificado</title>
+  <meta name="description" content="Curso online de extensão de cílios com 4 técnicas (Fio a Fio, Volume Russo, Híbrido e Brasileiro), apostila e suporte. Garanta sua vaga." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#ff4fa3" />
 
   <style>
     :root{
-      --bg:#fbf7fb;
-      --card:#ffffff;
-      --text:#1d1b22;
-      --muted:#6c6677;
+      --bg:#0b0b12;
+      --card:#121225;
+      --card2:#171733;
+      --text:#f7f7fb;
+      --muted:#b9b9cf;
+      --line:rgba(255,255,255,.08);
 
-      --brand:#d49a2a;      /* dourado */
-      --brand2:#ff4da6;     /* rosa */
-      --brand3:#7c4dff;     /* roxo */
-      --ok:#1fbf75;
+      --pink:#ff4fa3;
+      --pink2:#ff79bd;
+      --gold:#f2c14e;
+      --mint:#3be7b2;
 
-      --shadow: 0 18px 60px rgba(18, 16, 24, .10);
-      --shadow2: 0 10px 24px rgba(18, 16, 24, .10);
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --shadow2: 0 14px 40px rgba(255,79,163,.12);
       --radius: 18px;
       --radius2: 26px;
 
-      --max: 1100px;
+      --max: 1120px;
     }
 
     *{box-sizing:border-box}
@@ -38,964 +37,818 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(1200px 600px at 20% 0%, rgba(255,77,166,.10), transparent 60%),
-        radial-gradient(1200px 600px at 80% 10%, rgba(124,77,255,.08), transparent 55%),
-        linear-gradient(180deg, #ffffff 0%, var(--bg) 70%);
+        radial-gradient(1200px 700px at 10% -10%, rgba(255,79,163,.28), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(242,193,78,.22), transparent 55%),
+        radial-gradient(1100px 700px at 50% 120%, rgba(59,231,178,.12), transparent 60%),
+        linear-gradient(180deg, #07070e 0%, #0b0b12 40%, #07070e 100%);
       overflow-x:hidden;
     }
 
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,.75);
-      border-bottom: 1px solid rgba(20,18,26,.06);
-    }
-    .topbar-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:10px 0;
-      gap:12px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-    .brand-badge{
-      width:34px; height:34px;
-      border-radius:12px;
-      background: linear-gradient(135deg, var(--brand2), var(--brand3));
-      box-shadow: var(--shadow2);
-      display:grid; place-items:center;
-      color:white;
-      font-weight:900;
-      font-size:14px;
-    }
-    .pill{
-      display:flex; align-items:center; gap:10px;
-      padding:10px 12px;
-      border-radius:999px;
-      background:#fff;
-      box-shadow: var(--shadow2);
-      border:1px solid rgba(20,18,26,.06);
-      font-size:13px;
-      color:var(--muted);
-    }
-    .pill strong{color:var(--text)}
-    .cta{
+    .grid{display:grid; gap:18px}
+    .btn{
       display:inline-flex; align-items:center; justify-content:center;
       gap:10px;
       padding:14px 18px;
-      border-radius:14px;
-      background: linear-gradient(135deg, var(--brand2), var(--brand3));
-      color:#fff;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
       font-weight:800;
       letter-spacing:.2px;
-      border:0;
       cursor:pointer;
-      box-shadow: 0 18px 40px rgba(255,77,166,.22);
-      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow2); border-color: rgba(255,79,163,.35)}
+    .btn:active{transform: translateY(0)}
+    .btn-primary{
+      background: linear-gradient(135deg, var(--pink) 0%, var(--pink2) 55%, #ffb3da 100%);
+      color:#0b0b12;
+      border-color: rgba(255,255,255,.0);
+      box-shadow: 0 18px 40px rgba(255,79,163,.22);
+    }
+    .btn-primary:hover{box-shadow: 0 18px 55px rgba(255,79,163,.32)}
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+    }
+    .pill b{color:var(--text)}
+    .badge{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:12px;
+      background: rgba(242,193,78,.16);
+      border:1px solid rgba(242,193,78,.25);
+      color:#ffe1a0;
+    }
+
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(14px);
+      background: rgba(10,10,18,.62);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:900;
+      letter-spacing:.2px;
       white-space:nowrap;
     }
-    .cta:hover{transform: translateY(-1px); filter:saturate(1.02)}
-    .cta:active{transform: translateY(0px)}
-    .cta.secondary{
-      background:#fff;
-      color:var(--text);
-      border:1px solid rgba(20,18,26,.10);
-      box-shadow: var(--shadow2);
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.1) 40%),
+                  linear-gradient(135deg, var(--pink), var(--gold));
+      box-shadow: 0 18px 45px rgba(255,79,163,.18);
+      border:1px solid rgba(255,255,255,.18);
     }
-    .cta.small{padding:10px 14px; border-radius:12px; font-size:13px}
+    nav{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
+    .navlink{
+      font-size:13px; color:var(--muted); font-weight:800;
+      padding:8px 10px; border-radius:12px;
+      border:1px solid transparent;
+      transition:.12s;
+    }
+    .navlink:hover{color:var(--text); border-color: rgba(255,255,255,.12); background: rgba(255,255,255,.05)}
 
-    /* HERO */
     .hero{
-      padding:28px 0 8px;
+      padding:34px 0 18px;
       position:relative;
     }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:24px;
-      align-items:center;
-      padding:18px 0 10px;
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(800px 400px at 10% 10%, rgba(255,79,163,.16), transparent 60%),
+        radial-gradient(700px 420px at 90% 30%, rgba(242,193,78,.10), transparent 55%);
+      pointer-events:none;
+      filter:saturate(1.2);
+      opacity:.9;
+    }
+    .hero .wrap{position:relative}
+    .heroGrid{
+      grid-template-columns: 1.2fr .8fr;
+      align-items:stretch;
     }
     @media (max-width: 920px){
-      .hero-grid{grid-template-columns:1fr; gap:18px}
+      .heroGrid{grid-template-columns:1fr}
     }
-    .h-eyebrow{
-      display:inline-flex; align-items:center; gap:8px;
-      font-weight:700;
-      color: rgba(29,27,34,.85);
-      background: rgba(255,255,255,.75);
-      border:1px solid rgba(20,18,26,.06);
-      padding:8px 10px;
-      border-radius: 999px;
-      box-shadow: var(--shadow2);
+    .heroCard{
+      background: linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.03) 100%);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius2);
+      padding:22px;
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
     }
-    .dot{
-      width:8px; height:8px; border-radius:99px;
-      background: var(--ok);
-      box-shadow: 0 0 0 4px rgba(31,191,117,.16);
+    .heroCard::after{
+      content:"";
+      position:absolute;
+      width:680px; height:680px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,79,163,.20), transparent 60%);
+      right:-430px; top:-460px;
+      transform: rotate(12deg);
+      pointer-events:none;
     }
     h1{
-      margin:14px 0 10px;
-      font-size: 44px;
-      line-height: 1.04;
-      letter-spacing: -1px;
-    }
-    @media (max-width: 520px){
-      h1{font-size: 36px}
+      margin:10px 0 12px;
+      font-size: clamp(28px, 3.3vw, 46px);
+      line-height:1.05;
+      letter-spacing:-.6px;
     }
     .grad{
-      background: linear-gradient(90deg, var(--brand2), var(--brand3), var(--brand));
+      background: linear-gradient(90deg, #fff 0%, #ffd1ea 20%, #ff9fd2 55%, #ffe1a0 100%);
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
     }
-    .lead{
-      font-size:16px;
-      line-height:1.6;
+    .sub{
       color: var(--muted);
-      margin: 0 0 18px;
-      max-width: 58ch;
+      font-size: 15px;
+      line-height:1.5;
+      max-width: 56ch;
+      margin:0 0 16px;
     }
-    .hero-actions{
-      display:flex; gap:12px; flex-wrap:wrap;
-      align-items:center;
-      margin: 10px 0 16px;
+    .heroBullets{
+      display:grid; gap:10px;
+      margin: 14px 0 18px;
     }
-    .trust{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:12px;
-      color: var(--muted);
-      font-size:13px;
-    }
-    .trust .t{
-      display:inline-flex; align-items:center; gap:8px;
+    .bullet{
+      display:flex; gap:10px; align-items:flex-start;
       padding:10px 12px;
       border-radius: 14px;
-      background: rgba(255,255,255,.75);
-      border:1px solid rgba(20,18,26,.06);
-      box-shadow: var(--shadow2);
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-weight:700;
     }
-    .t svg{opacity:.8}
+    .dot{
+      width:10px; height:10px; border-radius:99px;
+      margin-top:4px;
+      background: linear-gradient(180deg, var(--pink), var(--gold));
+      box-shadow: 0 10px 20px rgba(255,79,163,.25);
+      flex:0 0 auto;
+    }
+    .heroActions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    .miniTrust{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 14px;
+      color: var(--muted);
+      font-weight:800;
+      font-size:12px;
+    }
+    .miniTrust span{
+      padding:8px 10px;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:999px;
+    }
 
-    .hero-card{
+    /* Timer */
+    .timerCard{
+      background: linear-gradient(180deg, rgba(255,79,163,.14) 0%, rgba(255,255,255,.04) 100%);
+      border:1px solid rgba(255,79,163,.28);
       border-radius: var(--radius2);
-      background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.80));
-      border: 1px solid rgba(20,18,26,.08);
-      box-shadow: var(--shadow);
+      padding:18px;
+      box-shadow: 0 18px 55px rgba(255,79,163,.12);
+      display:flex; flex-direction:column; gap:14px;
       overflow:hidden;
       position:relative;
     }
-    .hero-card-inner{padding:18px}
-    .hero-card .badge{
-      position:absolute;
-      top:14px; left:14px;
-      background: rgba(255,255,255,.84);
-      border: 1px solid rgba(20,18,26,.08);
-      padding: 10px 12px;
-      border-radius: 14px;
-      box-shadow: var(--shadow2);
-      display:flex; gap:10px; align-items:center;
-      font-size:13px;
-      color: var(--muted);
+    .timerCard::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 180px at 20% 0%, rgba(255,79,163,.22), transparent 60%),
+                  radial-gradient(420px 180px at 100% 40%, rgba(242,193,78,.12), transparent 60%);
+      pointer-events:none;
     }
-    .badge strong{color:var(--text)}
+    .timerCard > *{position:relative}
+    .timerTitle{
+      display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+    .timerTitle h3{margin:0; font-size:16px; letter-spacing:-.2px}
     .timer{
       display:grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap:10px;
-      margin-top: 48px;
-      padding: 0 0 6px;
     }
-    .timebox{
-      background:#fff;
-      border:1px solid rgba(20,18,26,.08);
-      border-radius: 16px;
-      padding: 12px 10px;
-      box-shadow: var(--shadow2);
+    .tbox{
+      background: rgba(10,10,18,.55);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding:14px 10px;
       text-align:center;
     }
-    .timebox .n{font-size:22px; font-weight:900}
-    .timebox .l{font-size:12px; color:var(--muted); margin-top:2px}
-    .timer-note{
-      margin: 8px 2px 0;
+    .tbox .n{
+      font-size: 28px;
+      font-weight: 1000;
+      letter-spacing: .6px;
+    }
+    .tbox .l{
+      color: var(--muted);
+      font-weight:900;
       font-size:12px;
-      color: var(--muted);
-      line-height: 1.45;
+      margin-top:2px;
     }
+    .timerHint{color: var(--muted); font-weight:800; font-size:13px; line-height:1.45}
 
-    .cover{
-      height: 280px;
-      background:
-        radial-gradient(700px 220px at 10% 0%, rgba(255,77,166,.18), transparent 65%),
-        radial-gradient(700px 220px at 90% 20%, rgba(124,77,255,.14), transparent 60%),
-        linear-gradient(135deg, rgba(212,154,42,.22), rgba(255,255,255,0) 60%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cdefs%3E%3Cpattern id='p' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath d='M40 0 L80 40 L40 80 L0 40 Z' fill='none' stroke='rgba(0,0,0,.05)' stroke-width='2'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='white'/%3E%3Crect width='100%25' height='100%25' fill='url(%23p)'/%3E%3C/svg%3E");
-      background-size: cover;
-      border-bottom: 1px solid rgba(20,18,26,.06);
-      position:relative;
+    section{padding:26px 0}
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      margin-bottom:14px;
     }
-    .cover .photo{
-      position:absolute;
-      right: -10px;
-      bottom: -8px;
-      width: 55%;
-      max-width: 380px;
-      height: 100%;
-      background: radial-gradient(220px 220px at 70% 60%, rgba(255,77,166,.20), transparent 65%);
-      filter: saturate(1.03);
-      opacity:.95;
-    }
-    .cover .photo::after{
-      content:"";
-      position:absolute;
-      inset: 22px 18px 18px 18px;
-      border-radius: 26px;
-      background:
-        radial-gradient(200px 200px at 70% 25%, rgba(124,77,255,.18), transparent 70%),
-        linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,.0)),
-        url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=75");
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 30px 80px rgba(20,18,26,.18);
-      border: 1px solid rgba(255,255,255,.45);
-    }
-    .cover .hint{
-      position:absolute;
-      left: 18px;
-      bottom: 16px;
-      max-width: 55%;
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.84);
-      border: 1px solid rgba(20,18,26,.08);
-      box-shadow: var(--shadow2);
-      font-size:13px;
-      color: var(--muted);
-    }
-    .cover .hint strong{color:var(--text)}
-
-    /* SECTIONS */
-    section{padding: 42px 0}
-    .section-title{
-      font-size: 30px;
-      margin: 0 0 10px;
-      letter-spacing:-.6px;
-    }
-    .section-sub{
+    .sectionTitle h2{
       margin:0;
-      color: var(--muted);
-      line-height:1.6;
-      max-width: 70ch;
+      font-size: clamp(20px, 2.2vw, 30px);
+      letter-spacing:-.4px;
     }
+    .sectionTitle p{margin:0; color:var(--muted); font-weight:700; max-width: 70ch}
 
-    .grid4{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:16px;
-      margin-top: 20px;
+    .cards{
+      grid-template-columns: repeat(3, 1fr);
     }
-    @media (max-width: 980px){
-      .grid4{grid-template-columns: repeat(2, 1fr)}
-    }
-    @media (max-width: 520px){
-      .grid4{grid-template-columns: 1fr}
-    }
-    .who{
-      background: rgba(255,255,255,.82);
-      border: 1px solid rgba(20,18,26,.08);
-      border-radius: 20px;
-      padding: 18px;
-      box-shadow: var(--shadow2);
+    @media (max-width: 920px){ .cards{grid-template-columns:1fr} }
+    .card{
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius2);
+      padding:16px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
       position:relative;
       overflow:hidden;
       min-height: 150px;
     }
-    .who::before{
-      content:"";
-      position:absolute;
-      inset:-80px -80px auto auto;
-      width:160px; height:160px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,77,166,.20), transparent 60%);
-      transform: rotate(15deg);
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); line-height:1.5; font-weight:700}
+    .card .icon{
+      width:40px; height:40px; border-radius:16px;
+      background: rgba(255,79,163,.14);
+      border:1px solid rgba(255,79,163,.18);
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:10px;
+      box-shadow: 0 18px 45px rgba(255,79,163,.10);
     }
-    .who .arrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-      color: rgba(29,27,34,.92);
-      letter-spacing:.2px;
-      margin-bottom: 10px;
-    }
-    .who .arrow span{
-      width:34px; height:34px; border-radius:12px;
-      background: rgba(212,154,42,.14);
-      display:grid; place-items:center;
-      border:1px solid rgba(212,154,42,.35);
-      color: var(--brand);
-    }
-    .who p{margin:0; color:var(--muted); line-height:1.55}
+    .icon svg{width:22px; height:22px; opacity:.95}
 
-    /* "Aprenda com quem sabe" */
-    .mentor{
-      margin-top: 22px;
-      display:grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap:18px;
-      align-items:center;
-      background: rgba(255,255,255,.88);
-      border: 1px solid rgba(20,18,26,.08);
-      border-radius: 26px;
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    @media (max-width: 900px){
-      .mentor{grid-template-columns:1fr}
-    }
-    .mentor-img{
-      min-height: 320px;
-      background:
-        radial-gradient(500px 320px at 30% 15%, rgba(255,77,166,.16), transparent 60%),
-        radial-gradient(500px 320px at 75% 35%, rgba(124,77,255,.14), transparent 60%),
-        url("https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1200&q=75");
-      background-size: cover;
-      background-position: center;
-      position:relative;
-    }
-    .mentor-img::after{
-      content:"";
-      position:absolute; inset:0;
-      background: linear-gradient(90deg, rgba(255,255,255,.88), rgba(255,255,255,0) 60%);
-    }
-    .mentor-content{
-      padding: 22px 22px 22px 6px;
-    }
-    @media (max-width:900px){
-      .mentor-content{padding: 22px}
-      .mentor-img::after{background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,0) 65%)}
-    }
-    .mentor-kicker{
-      font-weight:900;
-      letter-spacing:.5px;
-      color: rgba(29,27,34,.9);
-      margin:0 0 6px;
-      text-transform:uppercase;
-      font-size:12px;
-    }
-    .mentor-name{
-      font-size: 28px;
-      margin: 0 0 10px;
-      letter-spacing:-.5px;
-    }
-    .mentor-text{
-      margin:0 0 14px;
-      color: var(--muted);
-      line-height:1.6;
-    }
-    .mentor-points{
-      display:grid;
+    .twoCol{
       grid-template-columns: 1fr 1fr;
-      gap:10px;
-      margin: 14px 0 18px;
+      align-items:stretch;
     }
-    @media(max-width:520px){.mentor-points{grid-template-columns:1fr}}
-    .mp{
-      display:flex; gap:10px; align-items:flex-start;
-      background: rgba(255,255,255,.85);
-      border: 1px solid rgba(20,18,26,.08);
-      border-radius: 16px;
-      padding: 12px;
-      box-shadow: var(--shadow2);
-      color: var(--muted);
-      line-height: 1.45;
-      font-size: 13px;
-    }
-    .mp b{color:var(--text)}
-    .mp i{
-      width:26px; height:26px; border-radius: 10px;
-      background: rgba(31,191,117,.14);
-      border: 1px solid rgba(31,191,117,.35);
-      display:grid; place-items:center;
-      flex: 0 0 auto;
-      margin-top: 1px;
-    }
+    @media (max-width: 920px){ .twoCol{grid-template-columns:1fr} }
 
-    /* Videos */
-    .video-grid{
-      display:grid;
+    /* Video grid */
+    .videoGrid{
       grid-template-columns: repeat(2, 1fr);
-      gap:16px;
-      margin-top: 18px;
     }
-    @media (max-width: 820px){
-      .video-grid{grid-template-columns:1fr}
-    }
+    @media (max-width: 920px){ .videoGrid{grid-template-columns:1fr} }
     .video{
-      border-radius: 22px;
+      border-radius: var(--radius2);
       overflow:hidden;
-      border:1px solid rgba(20,18,26,.08);
-      background:#fff;
-      box-shadow: var(--shadow2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
       position:relative;
     }
     .video::before{
       content:"";
       display:block;
-      padding-top: 56.25%;
+      padding-top:56.25%;
     }
     .video iframe{
       position:absolute; inset:0;
       width:100%; height:100%;
       border:0;
     }
-    .video-cap{
-      padding: 12px 14px 14px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    .video-cap strong{color:var(--text)}
 
     /* FAQ */
     .faq{
-      margin-top: 18px;
-      display:grid;
-      gap:12px;
-    }
-    details{
-      background: rgba(255,255,255,.90);
-      border: 1px solid rgba(20,18,26,.08);
-      border-radius: 18px;
-      box-shadow: var(--shadow2);
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius2);
       overflow:hidden;
+      box-shadow: var(--shadow);
     }
-    summary{
-      list-style:none;
+    .faqItem{
+      border-top:1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+    }
+    .faqItem:first-child{border-top:none}
+    .faqQ{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:16px 16px;
       cursor:pointer;
-      padding: 16px 16px;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px;
       font-weight:900;
-      color: rgba(29,27,34,.92);
+      letter-spacing:-.2px;
     }
-    summary::-webkit-details-marker{display:none}
+    .faqQ span{color: var(--text)}
     .chev{
       width:34px; height:34px; border-radius: 14px;
-      display:grid; place-items:center;
-      border: 1px solid rgba(212,154,42,.35);
-      background: rgba(212,154,42,.12);
-      color: var(--brand);
-      transition: transform .2s ease;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      display:flex; align-items:center; justify-content:center;
+      transition: transform .15s ease;
       flex:0 0 auto;
     }
-    details[open] .chev{transform: rotate(180deg)}
-    .ans{
-      padding: 0 16px 16px;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
+    .faqA{
+      max-height:0;
+      overflow:hidden;
+      transition: max-height .22s ease;
     }
+    .faqA > div{
+      padding:0 16px 16px;
+      color: var(--muted);
+      line-height:1.55;
+      font-weight:700;
+    }
+    .faqItem.open .faqA{max-height:420px}
+    .faqItem.open .chev{transform: rotate(180deg)}
 
     /* CTA strip */
-    .cta-strip{
-      margin-top: 22px;
-      border-radius: 26px;
-      background: linear-gradient(135deg, rgba(255,77,166,.12), rgba(124,77,255,.10), rgba(212,154,42,.12));
-      border: 1px solid rgba(20,18,26,.06);
-      box-shadow: var(--shadow2);
-      padding: 18px;
+    .ctaStrip{
+      position:sticky;
+      bottom:14px;
+      z-index:25;
+      margin-top: 18px;
+      pointer-events:none;
+    }
+    .ctaInner{
+      pointer-events:auto;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      flex-wrap:wrap;
+      padding:12px 12px;
+      border-radius: 18px;
+      background: rgba(10,10,18,.72);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
     }
-    .cta-strip .txt{
-      max-width: 68ch;
+    .ctaLeft{
+      display:flex; flex-direction:column; gap:2px;
+      min-width: 0;
+    }
+    .ctaLeft b{font-size:13px}
+    .ctaLeft small{color: var(--muted); font-weight:800}
+    @media (max-width: 720px){
+      .ctaInner{flex-direction:column; align-items:stretch}
+      .ctaLeft{align-items:center; text-align:center}
+    }
+
+    footer{
+      padding:26px 0 46px;
       color: var(--muted);
-      line-height:1.6;
+      border-top: 1px solid rgba(255,255,255,.06);
+      margin-top: 18px;
     }
-    .cta-strip .txt b{color:var(--text)}
-    .mini{
+    footer a{color:#ffd1ea; font-weight:900}
+    .disclaimer{
       font-size:12px;
-      color: var(--muted);
-      margin-top: 10px;
-      line-height: 1.55;
+      line-height:1.55;
+      opacity:.95;
     }
-
-    /* Sticky mobile CTA */
-    .sticky{
-      position:fixed;
-      left:0; right:0; bottom:0;
-      z-index: 80;
-      padding: 10px 14px;
-      background: rgba(255,255,255,.82);
-      border-top: 1px solid rgba(20,18,26,.08);
-      backdrop-filter: blur(12px);
-      display:none;
+    .note{
+      font-size:12px;
+      color: rgba(255,255,255,.65);
+      font-weight:800;
+      margin-top:10px;
     }
-    .sticky .wrap{display:flex; gap:10px; align-items:center; justify-content:space-between}
-    .sticky small{color:var(--muted); line-height:1.3}
-    @media (max-width: 820px){
-      .sticky{display:block}
-      body{padding-bottom: 72px}
-    }
-
-    /* subtle animations */
-    .reveal{opacity:0; transform: translateY(10px); transition: opacity .55s ease, transform .55s ease}
-    .reveal.in{opacity:1; transform: translateY(0)}
   </style>
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="wrap topbar-inner">
+  <header>
+    <div class="wrap topbar">
       <div class="brand">
-        <div class="brand-badge">VC</div>
+        <div class="logo" aria-hidden="true"></div>
         <div>
-          <div style="font-size:13px; color:var(--muted); font-weight:700;">Viver de Cílios</div>
-          <div style="font-size:14px; font-weight:900; margin-top:2px;">Extensão de Cílios Online</div>
+          <div style="font-size:14px;">Viver de Cílios</div>
+          <div style="font-size:12px; color:var(--muted); font-weight:800;">Curso Online • 4 Técnicas</div>
         </div>
       </div>
 
-      <div class="pill">
-        <span class="dot"></span>
-        <span><strong>Aulas online</strong> + suporte</span>
-      </div>
-
-      <a class="cta small" data-cta href="#">Quero conhecer os planos</a>
+      <nav>
+        <a class="navlink" href="#conteudo">Conteúdo</a>
+        <a class="navlink" href="#videos">Vídeos</a>
+        <a class="navlink" href="#faq">Perguntas</a>
+        <a class="btn btn-primary" data-cta href="#">Quero conhecer os planos</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <div class="wrap hero">
-      <div class="hero-grid">
-        <div class="reveal">
-          <div class="h-eyebrow">
-            <span class="dot"></span>
-            <span>Curso online para quem quer <b>aprender e evoluir</b> na área</span>
+    <section class="hero">
+      <div class="wrap grid heroGrid">
+        <div class="heroCard">
+          <div class="pill">
+            <span class="badge">PROMO</span>
+            <span><b>Oferta por tempo limitado</b> • garanta sua vaga hoje</span>
           </div>
 
-          <h1>Transforme-se em uma <span class="grad">profissional em extensão de cílios</span> com um plano claro do básico ao avançado.</h1>
-          <p class="lead">
-            Se você quer entrar na área, melhorar suas técnicas ou organizar seu aprendizado com mais segurança,
-            aqui você encontra um caminho objetivo — com aulas gravadas, materiais e orientação.
+          <h1 class="grad">Transforme-se em uma Master em Extensão de Cílios</h1>
+          <p class="sub">
+            Curso completo com <b>4 técnicas</b> (Fio a Fio, Volume Russo, Híbrido e Volume Brasileiro),
+            apostila em PDF, fichas de atendimento e suporte. Estude no seu ritmo e comece a atender com segurança.
           </p>
 
-          <div class="hero-actions">
-            <a class="cta" data-cta href="#">Quero conhecer os planos</a>
-            <a class="cta secondary" href="#videos">Ver exemplos (vídeos)</a>
+          <div class="heroBullets">
+            <div class="bullet"><span class="dot"></span><div><b>Do zero ao avançado</b> — passo a passo, sem enrolação.</div></div>
+            <div class="bullet"><span class="dot"></span><div><b>Conteúdo prático</b> — técnicas aplicáveis para atender e evoluir.</div></div>
+            <div class="bullet"><span class="dot"></span><div><b>Certificado</b> — para reforçar credibilidade e profissionalismo.</div></div>
           </div>
 
-          <div class="trust">
-            <div class="t">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Conteúdo organizado por etapas
-            </div>
-            <div class="t">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M12 1l3 5 6 1-4 4 1 6-6-3-6 3 1-6-4-4 6-1 3-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
-              Acesso online no seu ritmo
-            </div>
-            <div class="t">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              </svg>
-              Suporte e materiais extras
-            </div>
+          <div class="heroActions">
+            <a class="btn btn-primary" data-cta href="#">Quero conhecer os planos</a>
+            <a class="btn" href="#videos">Ver vídeos de alunas</a>
+            <a class="btn" href="#faq">Tirar dúvidas rápidas</a>
+          </div>
+
+          <div class="miniTrust">
+            <span>✅ Acesso online</span>
+            <span>✅ Suporte</span>
+            <span>✅ Materiais bônus</span>
+            <span>✅ Estude quando quiser</span>
+          </div>
+
+          <div class="note">
+            *Conteúdo educacional. Resultados variam de pessoa para pessoa.
           </div>
         </div>
 
-        <aside class="hero-card reveal">
-          <div class="cover">
-            <div class="hint"><strong>Importante:</strong> este site é uma página informativa com direcionamento ao checkout oficial.</div>
-            <div class="photo" aria-hidden="true"></div>
+        <aside class="timerCard" aria-label="Contagem regressiva da oferta">
+          <div class="timerTitle">
+            <h3>⏳ Promoção expira em:</h3>
+            <span class="pill" title="Timer por visitante">Timer individual</span>
           </div>
 
-          <div class="hero-card-inner">
-            <div class="badge">
-              <span style="display:inline-flex; width:10px; height:10px; border-radius:99px; background:var(--brand); box-shadow:0 0 0 4px rgba(212,154,42,.15)"></span>
-              <span><strong>Oferta com prazo configurável</strong></span>
+          <div class="timer" role="timer" aria-live="polite">
+            <div class="tbox">
+              <div class="n" id="tMin">05</div>
+              <div class="l">min</div>
             </div>
-
-            <div class="timer" id="timer">
-              <div class="timebox"><div class="n" id="dd">--</div><div class="l">Dias</div></div>
-              <div class="timebox"><div class="n" id="hh">--</div><div class="l">Horas</div></div>
-              <div class="timebox"><div class="n" id="mm">--</div><div class="l">Min</div></div>
-              <div class="timebox"><div class="n" id="ss">--</div><div class="l">Seg</div></div>
+            <div class="tbox">
+              <div class="n" id="tSec">00</div>
+              <div class="l">seg</div>
             </div>
-
-            <div class="timer-note" id="timerNote">
-              Defina a data final no código para usar urgência <b>real</b>. Evite “falsas promessas” (isso pode reprovar no Google Ads).
+            <div class="tbox">
+              <div class="n" id="tMs">00</div>
+              <div class="l">ms</div>
             </div>
-
-            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
-              <a class="cta" data-cta href="#">Quero conhecer os planos</a>
-              <a class="cta secondary" href="#faq">Tirar dúvidas (FAQ)</a>
-            </div>
-
-            <p class="mini">
-              *Este site pode conter link de afiliado. Ao comprar pelo checkout oficial, você pode estar apoiando nosso trabalho com uma comissão, sem custo adicional para você.
-            </p>
           </div>
+
+          <p class="timerHint">
+            Clique e garanta a vaga enquanto está disponível. Quando o tempo acabar, o timer reinicia
+            para uma próxima janela (por visitante).
+          </p>
+
+          <a class="btn btn-primary" data-cta href="#">Quero garantir agora</a>
+          <a class="btn" href="#conteudo">Ver o que está incluso</a>
         </aside>
       </div>
-    </div>
+    </section>
 
-    <!-- PARA QUEM É -->
-    <section>
+    <section id="conteudo">
       <div class="wrap">
-        <h2 class="section-title reveal">Para quem é o <span class="grad">Curso Viver de Cílios</span>:</h2>
-        <p class="section-sub reveal">
-          Se você se identifica com algum desses cenários, essa trilha faz sentido para você.
-        </p>
+        <div class="sectionTitle">
+          <h2>O que você vai receber no curso</h2>
+          <p>Um pacote completo para aprender, treinar e evoluir na área com mais confiança e organização.</p>
+        </div>
 
-        <div class="grid4">
-          <div class="who reveal">
-            <div class="arrow"><span>»</span> Iniciante total</div>
-            <p>Você está começando do zero e quer um caminho guiado, do básico ao avançado, sem ficar “perdida”.</p>
+        <div class="grid cards">
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="white" stroke-opacity=".9" stroke-width="1.7"/><path d="M8 8h8M8 12h8M8 16h6" stroke="white" stroke-opacity=".75" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3>4 Técnicas completas</h3>
+            <p>Fio a Fio • Volume Russo • Volume Híbrido • Volume Brasileiro (com direcionamento e prática).</p>
           </div>
-          <div class="who reveal">
-            <div class="arrow"><span>»</span> Quer independência</div>
-            <p>Você quer trabalhar por conta, organizar horários e construir uma renda com uma habilidade valorizada.</p>
+
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 3 7v6c0 5 4 8 9 8s9-3 9-8V7l-9-4Z" stroke="white" stroke-opacity=".9" stroke-width="1.7"/><path d="M8.5 12l2.2 2.2L15.5 9.4" stroke="white" stroke-opacity=".85" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Apostila + Fichas</h3>
+            <p>Apostila em PDF, ficha de cuidados e ficha de anamnese para organizar atendimento com profissionalismo.</p>
           </div>
-          <div class="who reveal">
-            <div class="arrow"><span>»</span> Já tentou e travou</div>
-            <p>Você já fez curso/treinamento, mas sente que falta estrutura, clareza e padrão técnico para evoluir.</p>
-          </div>
-          <div class="who reveal">
-            <div class="arrow"><span>»</span> Quer melhorar técnica</div>
-            <p>Você quer atender melhor e mais rápido, com acabamento bonito e mais segurança na execução.</p>
+
+          <div class="card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a6 6 0 0 1 6 6c0 2.2-1.2 4.2-3 5.2V16a3 3 0 0 1-6 0v-2.8A6 6 0 0 1 12 2Z" stroke="white" stroke-opacity=".9" stroke-width="1.7"/><path d="M9 20h6" stroke="white" stroke-opacity=".8" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Suporte + evolução</h3>
+            <p>Orientação para tirar dúvidas e melhorar a execução. Estude no ritmo ideal e refine sua técnica.</p>
           </div>
         </div>
 
-        <div class="cta-strip reveal">
-          <div class="txt">
-            <b>Se você quer acelerar seu aprendizado com organização:</b> clique e vá para o checkout oficial para ver os planos disponíveis.
-          </div>
-          <a class="cta" data-cta href="#">Quero conhecer os planos</a>
+        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" data-cta href="#">Quero conhecer os planos</a>
+          <a class="btn" href="#faq">Ver perguntas frequentes</a>
         </div>
       </div>
     </section>
 
-    <!-- APRENDA COM QUEM SABE -->
     <section>
       <div class="wrap">
-        <h2 class="section-title reveal">Aprenda com quem sabe…</h2>
-        <p class="section-sub reveal">
-          Uma parte importante é estudar com método e consistência. Aqui você encontra uma proposta de aprendizado com trilha e materiais.
-        </p>
+        <div class="sectionTitle">
+          <h2>Para quem é este curso</h2>
+          <p>Se você quer aprender, melhorar técnica ou atender com mais segurança, aqui é o caminho.</p>
+        </div>
 
-        <div class="mentor reveal">
-          <div class="mentor-img" role="img" aria-label="Imagem ilustrativa de estética e beleza"></div>
-          <div class="mentor-content">
-            <p class="mentor-kicker">INSTRUTORA</p>
-            <h3 class="mentor-name"><span class="grad">Larissa Costa</span></h3>
-            <p class="mentor-text">
-              Conteúdo voltado para extensão de cílios, com aulas online e apoio ao aprendizado.
-              (Evitei números específicos aqui para reduzir risco de reprovação por “declarações não confiáveis” no Google Ads.)
-            </p>
-
-            <div class="mentor-points">
-              <div class="mp">
-                <i>✓</i>
-                <div><b>Organização do conteúdo</b><br/>Aulas em etapas para seguir no seu ritmo.</div>
-              </div>
-              <div class="mp">
-                <i>✓</i>
-                <div><b>Materiais extras</b><br/>PDFs e fichas para apoiar sua rotina de estudo.</div>
-              </div>
-              <div class="mp">
-                <i>✓</i>
-                <div><b>Técnicas populares</b><br/>Fio a fio, volumes e híbridos (conforme o plano).</div>
-              </div>
-              <div class="mp">
-                <i>✓</i>
-                <div><b>Suporte</b><br/>Canal de orientação conforme regras do produto.</div>
-              </div>
-            </div>
-
-            <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center">
-              <a class="cta" data-cta href="#">Quero conhecer os planos</a>
-              <a class="cta secondary" href="#videos">Ver depoimentos em vídeo</a>
-            </div>
+        <div class="grid cards">
+          <div class="card">
+            <h3>Iniciante (do zero)</h3>
+            <p>Sem contato com a profissão? Você aprende do básico ao avançado com estrutura e organização.</p>
+          </div>
+          <div class="card">
+            <h3>Quer independência</h3>
+            <p>Aprenda uma habilidade prática para construir sua renda e seus horários com mais autonomia.</p>
+          </div>
+          <div class="card">
+            <h3>Já fez curso e travou</h3>
+            <p>Volte para uma base sólida, melhore execução e evolua técnica com mais clareza.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- VÍDEOS (YouTube) -->
     <section id="videos">
       <div class="wrap">
-        <h2 class="section-title reveal">Veja o que algumas alunas falam</h2>
-        <p class="section-sub reveal">
-          Exemplos em vídeo (YouTube). Clique em “assistir” e depois volte para escolher o plano.
-        </p>
-
-        <div class="video-grid">
-          <div class="video reveal">
-            <iframe
-              src="https://www.youtube.com/embed/GdSbvodFstE"
-              title="Depoimento 1"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-            <div class="video-cap"><strong>Depoimento em vídeo</strong> — resultados variam por dedicação, prática e contexto.</div>
-          </div>
-
-          <div class="video reveal">
-            <iframe
-              src="https://www.youtube.com/embed/IetdHtgrzAI"
-              title="Depoimento 2"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-            <div class="video-cap"><strong>Depoimento em vídeo</strong> — use como referência, não como promessa.</div>
-          </div>
-
-          <div class="video reveal">
-            <iframe
-              src="https://www.youtube.com/embed/T8u4hxys8bE"
-              title="Depoimento 3"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-            <div class="video-cap"><strong>Depoimento em vídeo</strong> — aprendizado é processo: técnica + repetição + cuidado.</div>
-          </div>
-
-          <div class="video reveal">
-            <iframe
-              src="https://www.youtube.com/embed/wJNOSafjI6A"
-              title="Depoimento 4"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-            <div class="video-cap"><strong>Depoimento em vídeo</strong> — escolha o plano e comece pelo básico.</div>
-          </div>
+        <div class="sectionTitle">
+          <h2>Veja o que algumas alunas compartilham</h2>
+          <p>Vídeos reais ajudam a criar confiança — e você já pode ver exemplos antes de decidir.</p>
         </div>
 
-        <div class="cta-strip reveal">
-          <div class="txt">
-            <b>Pronta para começar?</b> Veja os planos no checkout oficial (o botão vai direto para a Hotmart).
-          </div>
-          <a class="cta" data-cta href="#">Quero conhecer os planos</a>
+        <div class="grid videoGrid" id="videoGrid"></div>
+
+        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" data-cta href="#">Quero garantir minha vaga</a>
+          <a class="btn" href="#faq">Ainda tenho dúvidas</a>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq">
       <div class="wrap">
-        <h2 class="section-title reveal">Perguntas frequentes</h2>
-        <p class="section-sub reveal">Respostas objetivas para tirar dúvidas antes de ir para o checkout.</p>
-
-        <div class="faq">
-          <details class="reveal">
-            <summary>
-              É possível aprender Extensão de Cílios online?
-              <span class="chev">⌄</span>
-            </summary>
-            <div class="ans">
-              Sim. O curso online permite assistir e revisar as aulas no seu ritmo. O resultado depende da prática e execução correta.
-              Se você seguir uma rotina de estudo e treino, a evolução tende a ser muito mais consistente.
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary>
-              Para fazer o curso preciso ter alguma experiência com Extensão de Cílios?
-              <span class="chev">⌄</span>
-            </summary>
-            <div class="ans">
-              Não necessariamente. Existem conteúdos pensados para iniciantes e também para quem já atua.
-              O ideal é começar do básico e subir de nível sem pular etapas.
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary>
-              Como vou receber o curso?
-              <span class="chev">⌄</span>
-            </summary>
-            <div class="ans">
-              Após a confirmação do pagamento no checkout oficial, você recebe as instruções de acesso e consegue assistir online (conforme as regras do produto).
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary>
-              Preciso ter os materiais antes de iniciar?
-              <span class="chev">⌄</span>
-            </summary>
-            <div class="ans">
-              Você pode começar assistindo a parte teórica e entendendo a base. Depois, conforme avançar, você decide o momento certo de adquirir materiais.
-              (É comum começar pelo entendimento e ir montando o kit aos poucos.)
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary>
-              Em quanto tempo vou aprender?
-              <span class="chev">⌄</span>
-            </summary>
-            <div class="ans">
-              Varia de pessoa para pessoa. O que acelera o processo é: rotina (frequência), treino correto e revisão das aulas.
-              Pense em evolução por etapas, não “milagre em X dias”.
-            </div>
-          </details>
-
-          <details class="reveal">
-            <summary>
-              Como vou receber meu certificado?
-              <span class="chev">⌄</span>
-            </summary>
-            <div class="ans">
-              Depende das regras do produto/checkout. Se houver certificação disponível no plano, as instruções são informadas dentro da plataforma após a compra.
-            </div>
-          </details>
+        <div class="sectionTitle">
+          <h2>Perguntas frequentes</h2>
+          <p>Respostas claras para você decidir com segurança.</p>
         </div>
 
-        <div class="cta-strip reveal">
-          <div class="txt">
-            <b>Último passo:</b> clique para ver os planos no checkout oficial e escolha a melhor opção para você.
+        <div class="faq" role="list">
+          <div class="faqItem open" role="listitem">
+            <div class="faqQ">
+              <span>É possível aprender Extensão de Cílios online?</span>
+              <div class="chev" aria-hidden="true">⌄</div>
+            </div>
+            <div class="faqA">
+              <div>
+                Sim. O curso é estruturado para você acompanhar com clareza, revisar quantas vezes quiser e praticar no seu ritmo.
+                O aprendizado depende da sua dedicação e prática.
+              </div>
+            </div>
           </div>
-          <a class="cta" data-cta href="#">Quero conhecer os planos</a>
+
+          <div class="faqItem" role="listitem">
+            <div class="faqQ">
+              <span>Para fazer o curso preciso ter experiência?</span>
+              <div class="chev" aria-hidden="true">⌄</div>
+            </div>
+            <div class="faqA">
+              <div>
+                Não. Ele foi pensado para iniciantes e também para quem já tem alguma noção e quer evoluir técnica e resultado.
+              </div>
+            </div>
+          </div>
+
+          <div class="faqItem" role="listitem">
+            <div class="faqQ">
+              <span>Como vou receber o curso?</span>
+              <div class="chev" aria-hidden="true">⌄</div>
+            </div>
+            <div class="faqA">
+              <div>
+                Após a confirmação do pagamento, você recebe as instruções de acesso por e-mail (conforme regras da plataforma do produtor).
+              </div>
+            </div>
+          </div>
+
+          <div class="faqItem" role="listitem">
+            <div class="faqQ">
+              <span>Preciso ter materiais antes de iniciar?</span>
+              <div class="chev" aria-hidden="true">⌄</div>
+            </div>
+            <div class="faqA">
+              <div>
+                Você pode começar entendendo as aulas e depois organizar seus materiais conforme for praticando. O ideal é evoluir com método e constância.
+              </div>
+            </div>
+          </div>
+
+          <div class="faqItem" role="listitem">
+            <div class="faqQ">
+              <span>Em quanto tempo vou aprender?</span>
+              <div class="chev" aria-hidden="true">⌄</div>
+            </div>
+            <div class="faqA">
+              <div>
+                Depende do seu ritmo de estudo e prática. Quem pratica com consistência costuma evoluir mais rápido do que quem assiste sem treinar.
+              </div>
+            </div>
+          </div>
+
+          <div class="faqItem" role="listitem">
+            <div class="faqQ">
+              <span>Como vou receber meu certificado?</span>
+              <div class="chev" aria-hidden="true">⌄</div>
+            </div>
+            <div class="faqA">
+              <div>
+                O certificado é disponibilizado conforme as regras e conclusão do curso na plataforma do produtor.
+              </div>
+            </div>
+          </div>
         </div>
 
-        <p class="mini reveal" style="margin-top:14px">
-          Aviso: esta página é uma landing de pré-venda e redireciona ao checkout oficial. Não garantimos resultados e não fazemos promessas. Resultados dependem de prática, dedicação, contexto e aplicação do conteúdo.
-        </p>
+        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+          <a class="btn btn-primary" data-cta href="#">QUERO CONHECER OS PLANOS</a>
+        </div>
       </div>
     </section>
 
-    <footer style="padding:30px 0 50px">
-      <div class="wrap" style="color:var(--muted); font-size:13px; line-height:1.7">
-        <b style="color:var(--text)">Curso Viver de Cílios</b><br/>
-        <span>Política de Privacidade · Termos de Uso</span><br/>
-        <span>© <span id="year"></span> — Página informativa. Link pode conter afiliação.</span>
+    <div class="wrap ctaStrip">
+      <div class="ctaInner">
+        <div class="ctaLeft">
+          <b>Oferta ativa agora • Garanta sua vaga</b>
+          <small>Sem redirecionamento automático — você clica quando quiser ✅</small>
+        </div>
+        <a class="btn btn-primary" data-cta href="#">Quero garantir agora</a>
       </div>
-    </footer>
+    </div>
   </main>
 
-  <!-- Sticky CTA (mobile) -->
-  <div class="sticky">
+  <footer>
     <div class="wrap">
-      <div>
-        <small><b style="color:var(--text)">Pronta para começar?</b><br/>Veja os planos no checkout oficial.</small>
+      <div class="disclaimer">
+        <b>Aviso:</b> Esta página é informativa e direciona para o checkout oficial do produtor.
+        Não prometemos ganhos, resultados garantidos ou afirmações irreais. Resultados variam conforme dedicação, prática e contexto.
       </div>
-      <a class="cta small" data-cta href="#">Quero conhecer</a>
+      <div class="note">
+        © <span id="year"></span> • Landing afiliado • <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Voltar ao topo</a>
+      </div>
     </div>
-  </div>
+  </footer>
 
   <script>
-    // =========================
-    // CONFIGURAÇÕES IMPORTANTES
-    // =========================
+    // ==============================
+    // CONFIG
+    // ==============================
+    const BASE_CHECKOUT_URL = "https://go.hotmart.com/D104345925A?ap=a455";
 
-    // 1) Checkout Hotmart (TODOS os botões apontam pra cá)
-    const CHECKOUT_URL = "https://go.hotmart.com/D104345925A?ap=a455";
+    // IDs dos vídeos do YouTube (apenas o ID, não a URL completa)
+    const YOUTUBE_IDS = [
+      "GdSbvodFstE",
+      "IetdHtgrzAI",
+      "T8u4hxys8bE",
+      "wJNOSafjI6A",
+    ];
 
-    // 2) Timer com prazo REAL (coloque uma data que faça sentido)
-    // Formato: "YYYY-MM-DDTHH:MM:SS-03:00"
-    // Exemplo: "2026-02-15T23:59:59-03:00"
-    // Se você NÃO quiser usar prazo, deixe TIMER_ENABLED = false.
-    const TIMER_ENABLED = true;
-    const TIMER_END_ISO = "2026-04-09T23:59:59-03:00"; // <-- ajuste quando quiser
+    // Timer: 5 minutos (em ms)
+    const TIMER_DURATION_MS = 5 * 60 * 1000;
 
-    // =========================
-    // APLICA LINKS DE CTA
-    // =========================
-    document.querySelectorAll("[data-cta]").forEach(a => {
-      a.setAttribute("href", CHECKOUT_URL);
-      a.setAttribute("rel", "nofollow sponsored");
-      a.setAttribute("target", "_blank");
-    });
+    // ==============================
+    // PASSAR PARAMS (gclid/utm) PARA CHECKOUT
+    // ==============================
+    function buildCheckoutUrl() {
+      const params = new URLSearchParams(window.location.search);
 
-    // Ano no footer
-    document.getElementById("year").textContent = new Date().getFullYear();
+      const gclid = params.get("gclid");
+      const utm_source = params.get("utm_source");
+      const utm_campaign = params.get("utm_campaign");
+      const utm_medium = params.get("utm_medium");
+      const utm_term = params.get("utm_term");
+      const utm_content = params.get("utm_content");
 
-    // =========================
-    // TIMER
-    // =========================
-    const dd = document.getElementById("dd");
-    const hh = document.getElementById("hh");
-    const mm = document.getElementById("mm");
-    const ss = document.getElementById("ss");
-    const timerNote = document.getElementById("timerNote");
+      const checkout = new URL(BASE_CHECKOUT_URL);
 
-    function pad(n){ return String(n).padStart(2,"0"); }
+      if (gclid) checkout.searchParams.set("gclid", gclid);
+      if (utm_source) checkout.searchParams.set("utm_source", utm_source);
+      if (utm_campaign) checkout.searchParams.set("utm_campaign", utm_campaign);
+      if (utm_medium) checkout.searchParams.set("utm_medium", utm_medium);
+      if (utm_term) checkout.searchParams.set("utm_term", utm_term);
+      if (utm_content) checkout.searchParams.set("utm_content", utm_content);
 
-    function runTimer(){
-      if(!TIMER_ENABLED){
-        timerNote.innerHTML = "Timer desativado. Se quiser urgência, ative no código com uma <b>data real</b>.";
-        dd.textContent = hh.textContent = mm.textContent = ss.textContent = "--";
-        return;
-      }
-
-      const end = new Date(TIMER_END_ISO).getTime();
-      if(Number.isNaN(end)){
-        timerNote.innerHTML = "Data do timer inválida. Corrija <b>TIMER_END_ISO</b> no script.";
-        return;
-      }
-
-      function tick(){
-        const now = Date.now();
-        let diff = Math.max(0, end - now);
-
-        const days = Math.floor(diff / (1000*60*60*24));
-        diff -= days*(1000*60*60*24);
-        const hours = Math.floor(diff / (1000*60*60));
-        diff -= hours*(1000*60*60);
-        const mins = Math.floor(diff / (1000*60));
-        diff -= mins*(1000*60);
-        const secs = Math.floor(diff / 1000);
-
-        dd.textContent = pad(days);
-        hh.textContent = pad(hours);
-        mm.textContent = pad(mins);
-        ss.textContent = pad(secs);
-
-        if(end - now <= 0){
-          timerNote.innerHTML = "Prazo encerrado. Você pode ajustar o timer ou remover esta seção.";
-        }else{
-          timerNote.innerHTML = "Prazo configurado para finalizar em <b>" + new Date(end).toLocaleString("pt-BR") + "</b>.";
-        }
-      }
-
-      tick();
-      setInterval(tick, 1000);
+      checkout.searchParams.set("src", "google_ads");
+      return checkout.toString();
     }
-    runTimer();
 
-    // =========================
-    // REVEAL (animações suaves)
-    // =========================
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting) e.target.classList.add("in");
-      });
-    }, {threshold: 0.08});
+    const CHECKOUT_URL = buildCheckoutUrl();
 
-    document.querySelectorAll(".reveal").forEach(el=> io.observe(el));
+    // aplica checkout em todos os botões data-cta
+    document.querySelectorAll("[data-cta]").forEach(a => {
+      a.href = CHECKOUT_URL;
+      a.rel = "nofollow sponsored";
+      a.target = "_blank";
+    });
 
-    // =========================
-    // MELHORIA UX: fechar outros FAQs ao abrir um
-    // =========================
-    const faqs = Array.from(document.querySelectorAll("details"));
-    faqs.forEach(d=>{
-      d.addEventListener("toggle", ()=>{
-        if(d.open){
-          faqs.forEach(other => { if(other !== d) other.open = false; });
-        }
+    // ==============================
+    // VIDEO EMBEDS
+    // ==============================
+    const vg = document.getElementById("videoGrid");
+    YOUTUBE_IDS.forEach((id) => {
+      const div = document.createElement("div");
+      div.className = "video";
+      div.innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&playsinline=1"
+          title="Depoimento / exemplo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"></iframe>
+      `;
+      vg.appendChild(div);
+    });
+
+    // ==============================
+    // FAQ ACCORDION
+    // ==============================
+    document.querySelectorAll(".faqItem").forEach((item) => {
+      const q = item.querySelector(".faqQ");
+      q.addEventListener("click", () => {
+        const isOpen = item.classList.contains("open");
+        document.querySelectorAll(".faqItem").forEach(i => i.classList.remove("open"));
+        if (!isOpen) item.classList.add("open");
       });
     });
+
+    // ==============================
+    // TIMER 5 MIN (persistente por visitante)
+    // ==============================
+    const LS_KEY = "promo_timer_end_v1";
+
+    function getEndTime() {
+      const now = Date.now();
+      const stored = Number(localStorage.getItem(LS_KEY) || 0);
+      if (!stored || stored < now) {
+        const end = now + TIMER_DURATION_MS;
+        localStorage.setItem(LS_KEY, String(end));
+        return end;
+      }
+      return stored;
+    }
+
+    const endTime = getEndTime();
+
+    const tMin = document.getElementById("tMin");
+    const tSec = document.getElementById("tSec");
+    const tMs  = document.getElementById("tMs");
+
+    function pad2(n){ return String(n).padStart(2, "0"); }
+
+    function tick() {
+      const now = Date.now();
+      let left = endTime - now;
+
+      if (left <= 0) {
+        // reinicia janela
+        const newEnd = now + TIMER_DURATION_MS;
+        localStorage.setItem(LS_KEY, String(newEnd));
+        location.reload();
+        return;
+      }
+
+      const minutes = Math.floor(left / 60000);
+      left -= minutes * 60000;
+      const seconds = Math.floor(left / 1000);
+      const ms = Math.floor((left - seconds * 1000) / 10);
+
+      tMin.textContent = pad2(minutes);
+      tSec.textContent = pad2(seconds);
+      tMs.textContent  = pad2(ms);
+
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    // misc
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
