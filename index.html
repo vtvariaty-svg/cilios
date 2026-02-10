@@ -44,7 +44,6 @@
       overflow-x:hidden;
     }
 
-    /* evita scroll lateral por elementos largos */
     img, iframe, video { max-width:100%; height:auto; }
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
     .grid{display:grid; gap:18px}
@@ -75,6 +74,10 @@
       box-shadow: 0 18px 40px rgba(255,79,163,.22);
     }
     .btn-primary:hover{box-shadow: 0 18px 55px rgba(255,79,163,.32)}
+    .btn-ghost{
+      background: rgba(255,255,255,.03);
+      border-color: rgba(255,255,255,.10);
+    }
 
     .pill{
       display:inline-flex; align-items:center; gap:10px;
@@ -357,6 +360,79 @@
       border:0;
     }
 
+    /* Instructor (Larissa) */
+    .instructor{
+      display:grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap:16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius2);
+      padding:16px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      min-width:0;
+    }
+    @media (max-width: 920px){
+      .instructor{grid-template-columns: 1fr}
+    }
+    .instPhoto{
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(260px 160px at 20% 0%, rgba(255,79,163,.20), transparent 60%),
+        radial-gradient(260px 160px at 100% 40%, rgba(242,193,78,.12), transparent 60%),
+        rgba(255,255,255,.03);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      min-height:220px;
+    }
+    .instPhoto .ph{
+      width:100%;
+      border-radius: 18px;
+      background: rgba(0,0,0,.22);
+      border:1px dashed rgba(255,255,255,.18);
+      padding:14px;
+      text-align:center;
+      color: rgba(255,255,255,.75);
+      font-weight:900;
+      line-height:1.35;
+    }
+    .instInfo h3{
+      margin:0 0 6px;
+      font-size: 20px;
+      letter-spacing:-.2px;
+    }
+    .instInfo p{
+      margin:0 0 10px;
+      color: var(--muted);
+      font-weight:700;
+      line-height:1.55;
+    }
+    .instStats{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin:10px 0 12px;
+    }
+    .instStats span{
+      padding:8px 10px;
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:999px;
+      font-weight:900;
+      color: rgba(255,255,255,.85);
+      font-size:12px;
+    }
+    .instActions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 6px;
+    }
+    .igIcon{
+      width:18px; height:18px;
+      display:inline-block;
+    }
+
     /* FAQ */
     .faq{
       background: rgba(255,255,255,.03);
@@ -448,9 +524,7 @@
       margin-top:10px;
     }
 
-    /* ===========================
-       MOBILE FIX PACK (principal)
-       =========================== */
+    /* MOBILE FIX PACK */
     @media (max-width: 720px){
       .wrap{padding:0 14px}
 
@@ -507,7 +581,6 @@
         white-space:normal;
       }
 
-      /* evita que o sticky cubra o final */
       footer{padding-bottom:84px}
     }
   </style>
@@ -526,6 +599,7 @@
 
       <nav>
         <a class="navlink" href="#conteudo">Conteúdo</a>
+        <a class="navlink" href="#professora">Professora</a>
         <a class="navlink" href="#videos">Vídeos</a>
         <a class="navlink" href="#faq">Perguntas</a>
         <a class="btn btn-primary" data-cta href="#">Quero conhecer os planos</a>
@@ -557,7 +631,7 @@
           <div class="heroActions">
             <a class="btn btn-primary" data-cta href="#">Quero conhecer os planos</a>
             <a class="btn" href="#videos">Ver vídeos de alunas</a>
-            <a class="btn" href="#faq">Tirar dúvidas rápidas</a>
+            <a class="btn" href="#professora">Conhecer a professora</a>
           </div>
 
           <div class="miniTrust">
@@ -640,6 +714,58 @@
         <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
           <a class="btn btn-primary" data-cta href="#">Quero conhecer os planos</a>
           <a class="btn" href="#faq">Ver perguntas frequentes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professora / credibilidade -->
+    <section id="professora">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>Aprenda com quem sabe: Larissa Costa</h2>
+          <p>Um nome forte no nicho de beleza + ensino estruturado para você aprender com clareza e confiança.</p>
+        </div>
+
+        <div class="instructor">
+          <div class="instPhoto" aria-label="Foto ilustrativa da professora">
+            <div class="ph">
+              Área da foto da Larissa (opcional)<br/>
+              <span style="font-weight:800; color:rgba(255,255,255,.7); font-size:12px;">
+                Se você quiser, me envie a imagem oficial que eu já deixo aqui embutida.
+              </span>
+            </div>
+          </div>
+
+          <div class="instInfo">
+            <h3>Larissa Costa</h3>
+            <p>
+              Estudo online com metodologia e organização. Você aprende do básico ao avançado,
+              com conteúdo prático para aplicar no dia a dia e evoluir técnica com mais segurança.
+            </p>
+
+            <div class="instStats">
+              <span>📌 Conteúdo passo a passo</span>
+              <span>🧾 Certificado ao concluir</span>
+              <span>📚 Materiais e fichas</span>
+              <span>💬 Suporte</span>
+            </div>
+
+            <div class="instActions">
+              <a class="btn btn-primary" data-cta href="#">Quero conhecer os planos</a>
+              <a class="btn btn-ghost" data-ig href="#">
+                <svg class="igIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="white" stroke-opacity=".85" stroke-width="1.6"/>
+                  <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="white" stroke-opacity=".85" stroke-width="1.6"/>
+                  <path d="M17.5 6.5h.01" stroke="white" stroke-opacity=".85" stroke-width="3.2" stroke-linecap="round"/>
+                </svg>
+                Instagram da Larissa
+              </a>
+            </div>
+
+            <div class="note">
+              *Link de credibilidade abre em nova aba. Conteúdo educacional; resultados variam.
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -768,6 +894,7 @@
 
         <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
           <a class="btn btn-primary" data-cta href="#">QUERO CONHECER OS PLANOS</a>
+          <a class="btn btn-ghost" data-ig href="#">Instagram da Larissa</a>
         </div>
       </div>
     </section>
@@ -800,8 +927,9 @@
     // CONFIG
     // ==============================
     const BASE_CHECKOUT_URL = "https://go.hotmart.com/D104345925A?ap=a455";
+    const INSTAGRAM_TRACK_URL = "https://go.hotmart.com/D104345925A?ap=fea9";
 
-    // IDs dos vídeos do YouTube (apenas o ID, não a URL completa)
+    // IDs dos vídeos do YouTube
     const YOUTUBE_IDS = [
       "GdSbvodFstE",
       "IetdHtgrzAI",
@@ -809,7 +937,7 @@
       "wJNOSafjI6A",
     ];
 
-    // Timer: 5 minutos (em ms)
+    // Timer: 5 minutos
     const TIMER_DURATION_MS = 5 * 60 * 1000;
 
     // ==============================
@@ -840,8 +968,16 @@
 
     const CHECKOUT_URL = buildCheckoutUrl();
 
+    // CTAs de compra -> checkout
     document.querySelectorAll("[data-cta]").forEach(a => {
       a.href = CHECKOUT_URL;
+      a.rel = "nofollow sponsored";
+      a.target = "_blank";
+    });
+
+    // Botões de credibilidade -> instagram (tracking)
+    document.querySelectorAll("[data-ig]").forEach(a => {
+      a.href = INSTAGRAM_TRACK_URL;
       a.rel = "nofollow sponsored";
       a.target = "_blank";
     });
