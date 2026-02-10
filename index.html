@@ -44,9 +44,13 @@
       overflow-x:hidden;
     }
 
-    a{color:inherit; text-decoration:none}
+    /* evita scroll lateral por elementos largos */
+    img, iframe, video { max-width:100%; height:auto; }
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
     .grid{display:grid; gap:18px}
+
+    a{color:inherit; text-decoration:none}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       gap:10px;
@@ -60,6 +64,7 @@
       cursor:pointer;
       transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
       user-select:none;
+      white-space:nowrap;
     }
     .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow2); border-color: rgba(255,79,163,.35)}
     .btn:active{transform: translateY(0)}
@@ -70,6 +75,7 @@
       box-shadow: 0 18px 40px rgba(255,79,163,.22);
     }
     .btn-primary:hover{box-shadow: 0 18px 55px rgba(255,79,163,.32)}
+
     .pill{
       display:inline-flex; align-items:center; gap:10px;
       padding:8px 12px;
@@ -79,6 +85,7 @@
       color:var(--muted);
       font-weight:700;
       font-size:13px;
+      flex-wrap:wrap;
     }
     .pill b{color:var(--text)}
     .badge{
@@ -108,6 +115,7 @@
       font-weight:900;
       letter-spacing:.2px;
       white-space:nowrap;
+      min-width:0;
     }
     .logo{
       width:34px; height:34px; border-radius:12px;
@@ -115,13 +123,18 @@
                   linear-gradient(135deg, var(--pink), var(--gold));
       box-shadow: 0 18px 45px rgba(255,79,163,.18);
       border:1px solid rgba(255,255,255,.18);
+      flex:0 0 auto;
     }
-    nav{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
+    nav{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
     .navlink{
       font-size:13px; color:var(--muted); font-weight:800;
       padding:8px 10px; border-radius:12px;
       border:1px solid transparent;
       transition:.12s;
+      white-space:nowrap;
     }
     .navlink:hover{color:var(--text); border-color: rgba(255,255,255,.12); background: rgba(255,255,255,.05)}
 
@@ -140,6 +153,7 @@
       opacity:.9;
     }
     .hero .wrap{position:relative}
+
     .heroGrid{
       grid-template-columns: 1.2fr .8fr;
       align-items:stretch;
@@ -147,6 +161,7 @@
     @media (max-width: 920px){
       .heroGrid{grid-template-columns:1fr}
     }
+
     .heroCard{
       background: linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.03) 100%);
       border:1px solid rgba(255,255,255,.10);
@@ -155,6 +170,7 @@
       box-shadow: var(--shadow);
       position:relative;
       overflow:hidden;
+      min-width:0;
     }
     .heroCard::after{
       content:"";
@@ -165,11 +181,13 @@
       transform: rotate(12deg);
       pointer-events:none;
     }
+
     h1{
       margin:10px 0 12px;
-      font-size: clamp(28px, 3.3vw, 46px);
+      font-size: clamp(26px, 6.2vw, 46px);
       line-height:1.05;
       letter-spacing:-.6px;
+      word-break:break-word;
     }
     .grad{
       background: linear-gradient(90deg, #fff 0%, #ffd1ea 20%, #ff9fd2 55%, #ffe1a0 100%);
@@ -184,10 +202,8 @@
       max-width: 56ch;
       margin:0 0 16px;
     }
-    .heroBullets{
-      display:grid; gap:10px;
-      margin: 14px 0 18px;
-    }
+
+    .heroBullets{display:grid; gap:10px; margin: 14px 0 18px}
     .bullet{
       display:flex; gap:10px; align-items:flex-start;
       padding:10px 12px;
@@ -196,6 +212,7 @@
       border:1px solid rgba(255,255,255,.08);
       color: var(--muted);
       font-weight:700;
+      min-width:0;
     }
     .dot{
       width:10px; height:10px; border-radius:99px;
@@ -204,6 +221,7 @@
       box-shadow: 0 10px 20px rgba(255,79,163,.25);
       flex:0 0 auto;
     }
+
     .heroActions{
       display:flex; gap:12px; flex-wrap:wrap;
       margin-top: 10px;
@@ -232,6 +250,7 @@
       display:flex; flex-direction:column; gap:14px;
       overflow:hidden;
       position:relative;
+      min-width:0;
     }
     .timerCard::before{
       content:"";
@@ -256,6 +275,7 @@
       border-radius: 18px;
       padding:14px 10px;
       text-align:center;
+      min-width:0;
     }
     .tbox .n{
       font-size: 28px;
@@ -277,7 +297,7 @@
     }
     .sectionTitle h2{
       margin:0;
-      font-size: clamp(20px, 2.2vw, 30px);
+      font-size: clamp(20px, 4.8vw, 30px);
       letter-spacing:-.4px;
     }
     .sectionTitle p{margin:0; color:var(--muted); font-weight:700; max-width: 70ch}
@@ -286,6 +306,7 @@
       grid-template-columns: repeat(3, 1fr);
     }
     @media (max-width: 920px){ .cards{grid-template-columns:1fr} }
+
     .card{
       background: rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
@@ -295,6 +316,7 @@
       position:relative;
       overflow:hidden;
       min-height: 150px;
+      min-width:0;
     }
     .card h3{margin:0 0 8px; font-size:16px}
     .card p{margin:0; color:var(--muted); line-height:1.5; font-weight:700}
@@ -308,17 +330,13 @@
     }
     .icon svg{width:22px; height:22px; opacity:.95}
 
-    .twoCol{
-      grid-template-columns: 1fr 1fr;
-      align-items:stretch;
-    }
-    @media (max-width: 920px){ .twoCol{grid-template-columns:1fr} }
-
     /* Video grid */
     .videoGrid{
       grid-template-columns: repeat(2, 1fr);
+      gap:14px;
     }
     @media (max-width: 920px){ .videoGrid{grid-template-columns:1fr} }
+
     .video{
       border-radius: var(--radius2);
       overflow:hidden;
@@ -326,6 +344,7 @@
       background: rgba(255,255,255,.03);
       box-shadow: var(--shadow);
       position:relative;
+      min-width:0;
     }
     .video::before{
       content:"";
@@ -357,8 +376,9 @@
       cursor:pointer;
       font-weight:900;
       letter-spacing:-.2px;
+      min-width:0;
     }
-    .faqQ span{color: var(--text)}
+    .faqQ span{color: var(--text); min-width:0}
     .chev{
       width:34px; height:34px; border-radius: 14px;
       border:1px solid rgba(255,255,255,.10);
@@ -378,13 +398,13 @@
       line-height:1.55;
       font-weight:700;
     }
-    .faqItem.open .faqA{max-height:420px}
+    .faqItem.open .faqA{max-height:520px}
     .faqItem.open .chev{transform: rotate(180deg)}
 
     /* CTA strip */
     .ctaStrip{
       position:sticky;
-      bottom:14px;
+      bottom:12px;
       z-index:25;
       margin-top: 18px;
       pointer-events:none;
@@ -408,13 +428,9 @@
     }
     .ctaLeft b{font-size:13px}
     .ctaLeft small{color: var(--muted); font-weight:800}
-    @media (max-width: 720px){
-      .ctaInner{flex-direction:column; align-items:stretch}
-      .ctaLeft{align-items:center; text-align:center}
-    }
 
     footer{
-      padding:26px 0 46px;
+      padding:26px 0 56px;
       color: var(--muted);
       border-top: 1px solid rgba(255,255,255,.06);
       margin-top: 18px;
@@ -431,11 +447,74 @@
       font-weight:800;
       margin-top:10px;
     }
+
+    /* ===========================
+       MOBILE FIX PACK (principal)
+       =========================== */
+    @media (max-width: 720px){
+      .wrap{padding:0 14px}
+
+      .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+      }
+      nav{
+        width:100%;
+        justify-content:flex-start;
+        gap:8px;
+      }
+      nav .btn{
+        width:100%;
+        white-space:normal;
+      }
+
+      .hero{padding:18px 0 10px}
+      .heroCard{padding:16px}
+      .timerCard{padding:14px}
+
+      .heroActions .btn{
+        width:100%;
+        white-space:normal;
+      }
+
+      .miniTrust span{flex:1 1 auto; text-align:center}
+
+      .timer{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .tbox{padding:12px 8px; border-radius:16px}
+      .tbox .n{font-size:24px}
+
+      section{padding:18px 0}
+      .sectionTitle{gap:8px}
+      .sectionTitle p{font-size:13px; line-height:1.45}
+
+      .card{min-height:auto; padding:14px}
+      .card h3{font-size:15px}
+
+      .faqQ{padding:14px 14px}
+      .faqA > div{padding:0 14px 14px}
+
+      .ctaInner{
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+      }
+      .ctaLeft{align-items:center; text-align:center}
+      .ctaInner .btn{
+        width:100%;
+        white-space:normal;
+      }
+
+      /* evita que o sticky cubra o final */
+      footer{padding-bottom:84px}
+    }
   </style>
 </head>
 
 <body>
-  <header>
+  <header id="top">
     <div class="wrap topbar">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
@@ -761,7 +840,6 @@
 
     const CHECKOUT_URL = buildCheckoutUrl();
 
-    // aplica checkout em todos os botões data-cta
     document.querySelectorAll("[data-cta]").forEach(a => {
       a.href = CHECKOUT_URL;
       a.rel = "nofollow sponsored";
@@ -814,7 +892,7 @@
       return stored;
     }
 
-    const endTime = getEndTime();
+    let endTime = getEndTime();
 
     const tMin = document.getElementById("tMin");
     const tSec = document.getElementById("tSec");
@@ -827,11 +905,10 @@
       let left = endTime - now;
 
       if (left <= 0) {
-        // reinicia janela
         const newEnd = now + TIMER_DURATION_MS;
         localStorage.setItem(LS_KEY, String(newEnd));
-        location.reload();
-        return;
+        endTime = newEnd;
+        left = endTime - now;
       }
 
       const minutes = Math.floor(left / 60000);
@@ -847,7 +924,6 @@
     }
     requestAnimationFrame(tick);
 
-    // misc
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
