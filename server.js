@@ -1,8 +1,13 @@
+// server.js (Node http puro) - serve index.html + arquivos estáticos (png/jpg/css/js/etc)
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const url = require("url");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
+
+// Pasta do projeto (onde estão server.js e index.html)
+const ROOT = __dirname;
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -18,66 +23,69 @@ const MIME = {
   ".txt": "text/plain; charset=utf-8",
   ".woff": "font/woff",
   ".woff2": "font/woff2",
+  ".ttf": "font/ttf",
+  ".mp4": "video/mp4"
 };
 
-function safeResolve(urlPath) {
-  // remove querystring e normaliza
-  const clean = urlPath.split("?")[0];
-  const decoded = decodeURIComponent(clean);
-
-  // bloqueia path traversal
-  const normalized = path.normalize(decoded).replace(/^(\.\.[/\\])+/, "");
-  return path.join(__dirname, normalized);
+function safeJoin(base, target) {
+  // evita path traversal
+  const targetPath = path.normalize(target).replace(/^(\.\.(\/|\\|$))+/, "");
+  return path.join(base, targetPath);
 }
 
-function sendFile(res, filePath) {
-  fs.readFile(filePath, (err, content) => {
-    if (err) {
-      res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
-      res.end("404 - Not Found");
-      return;
-    }
+function send(res, status, content, headers = {}) {
+  res.writeHead(status, headers);
+  res.end(content);
+}
 
-    const ext = path.extname(filePath).toLowerCase();
-    const type = MIME[ext] || "application/octet-stream";
+function streamFile(res, filePath) {
+  const ext = path.extname(filePath).toLowerCase();
+  const type = MIME[ext] || "application/octet-stream";
 
-    // cache leve para assets (não cacheia html)
-    const headers = {
-      "Content-Type": type,
-    };
-    if (ext !== ".html") {
-      headers["Cache-Control"] = "public, max-age=3600";
-    } else {
-      headers["Cache-Control"] = "no-store";
-    }
+  const stat = fs.statSync(filePath);
 
-    res.writeHead(200, headers);
-    res.end(content);
+  // Cache leve (bom para imagens/css/js)
+  const cacheHeader =
+    ext === ".html" ? "no-store" : "public, max-age=3600";
+
+  res.writeHead(200, {
+    "Content-Type": type,
+    "Content-Length": stat.size,
+    "Cache-Control": cacheHeader
   });
+
+  fs.createReadStream(filePath).pipe(res);
 }
 
 const server = http.createServer((req, res) => {
-  const urlPath = req.url.split("?")[0];
+  try {
+    const parsed = url.parse(req.url);
+    let pathname = decodeURIComponent(parsed.pathname || "/");
 
-  // rota raiz -> index
-  if (urlPath === "/" || urlPath === "/index.html") {
-    return sendFile(res, path.join(__dirname, "index.html"));
-  }
+    // Normaliza
+    if (!pathname || pathname === "/") pathname = "/index.html";
 
-  // tenta servir arquivo estático
-  const filePath = safeResolve(urlPath);
+    // Caminho absoluto seguro
+    const filePath = safeJoin(ROOT, pathname);
 
-  // se existir, serve
-  fs.stat(filePath, (err, stats) => {
-    if (!err && stats.isFile()) {
-      return sendFile(res, filePath);
+    // Se existir arquivo, serve ele
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+      return streamFile(res, filePath);
     }
 
-    // fallback: qualquer outra rota -> index.html (SPA-like)
-    return sendFile(res, path.join(__dirname, "index.html"));
-  });
+    // fallback SPA: devolve index.html
+    const indexPath = path.join(ROOT, "index.html");
+    if (fs.existsSync(indexPath)) {
+      return streamFile(res, indexPath);
+    }
+
+    return send(res, 404, "Not Found", { "Content-Type": "text/plain; charset=utf-8" });
+  } catch (err) {
+    console.error(err);
+    return send(res, 500, "Internal Server Error", { "Content-Type": "text/plain; charset=utf-8" });
+  }
 });
 
 server.listen(PORT, () => {
-  console.log(`Server on :${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
