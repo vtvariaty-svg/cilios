@@ -10,20 +10,19 @@
 
   <style>
     :root{
-      --bg:#f7f4f6;
-      --panel:#ffffff;
-      --panel2:#fff7fb;
-      --text:#15131a;
-      --muted:#5a5563;
-      --line:rgba(20,18,26,.10);
+      --bg:#0b0b12;
+      --card:#121225;
+      --card2:#171733;
+      --text:#15121a;
+      --muted:rgba(20,18,26,.70);
 
       --pink:#ff4fa3;
       --pink2:#ff79bd;
       --gold:#d8b067;
-      --gold2:#f2d6a3;
+      --mint:#3be7b2;
 
-      --shadow: 0 20px 60px rgba(18,12,24,.12);
-      --shadow2: 0 14px 40px rgba(255,79,163,.14);
+      --shadow: 0 20px 60px rgba(0,0,0,.15);
+      --shadow2: 0 14px 40px rgba(255,79,163,.12);
       --radius: 18px;
       --radius2: 26px;
 
@@ -37,47 +36,48 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(900px 520px at 12% -10%, rgba(255,79,163,.16), transparent 60%),
-        radial-gradient(850px 520px at 92% 0%, rgba(216,176,103,.18), transparent 55%),
-        radial-gradient(900px 600px at 50% 120%, rgba(255,121,189,.12), transparent 60%),
-        repeating-linear-gradient(135deg, rgba(0,0,0,.025) 0 2px, transparent 2px 18px),
-        linear-gradient(180deg, #f7f4f6 0%, #ffffff 60%, #f7f4f6 100%);
+        radial-gradient(1200px 700px at 10% -10%, rgba(255,79,163,.18), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(216,176,103,.18), transparent 55%),
+        radial-gradient(1100px 700px at 50% 120%, rgba(59,231,178,.10), transparent 60%),
+        linear-gradient(180deg, #fff 0%, #fff7fb 35%, #fff 100%);
       overflow-x:hidden;
     }
 
     img, iframe, video { max-width:100%; height:auto; }
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
     .grid{display:grid; gap:18px}
+
     a{color:inherit; text-decoration:none}
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       gap:10px;
       padding:14px 18px;
-      border-radius: 14px;
-      border:1px solid rgba(20,18,26,.12);
-      background: rgba(255,255,255,.70);
-      color:var(--text);
-      font-weight:900;
+      border-radius: 999px;
+      border:1px solid rgba(20,18,26,.10);
+      background: rgba(255,255,255,.72);
+      color:rgba(20,18,26,.92);
+      font-weight:1000;
       letter-spacing:.2px;
       cursor:pointer;
       transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
       user-select:none;
       white-space:nowrap;
-      box-shadow: 0 10px 22px rgba(18,12,24,.08);
+      box-shadow: 0 12px 28px rgba(18,12,24,.10);
     }
-    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow2); border-color: rgba(255,79,163,.35)}
+    .btn:hover{transform: translateY(-1px); box-shadow: 0 18px 45px rgba(18,12,24,.14); border-color: rgba(255,79,163,.30)}
     .btn:active{transform: translateY(0)}
     .btn-primary{
       background: linear-gradient(135deg, var(--pink) 0%, var(--pink2) 55%, #ffb3da 100%);
-      color:#1a0e15;
+      color:#1a0d14;
       border-color: rgba(255,255,255,.0);
       box-shadow: 0 18px 40px rgba(255,79,163,.22);
     }
-    .btn-primary:hover{box-shadow: 0 18px 55px rgba(255,79,163,.30)}
+    .btn-primary:hover{box-shadow: 0 20px 55px rgba(255,79,163,.30)}
     .btn-ghost{
-      background: rgba(255,255,255,.55);
-      border-color: rgba(20,18,26,.12);
+      background: rgba(255,255,255,.60);
+      border-color: rgba(20,18,26,.10);
+      box-shadow: 0 10px 22px rgba(18,12,24,.08);
     }
 
     .pill{
@@ -85,30 +85,29 @@
       padding:8px 12px;
       border-radius:999px;
       border:1px solid rgba(20,18,26,.10);
-      background: rgba(255,255,255,.70);
-      color:var(--muted);
-      font-weight:800;
+      background: rgba(255,255,255,.78);
+      color:rgba(20,18,26,.72);
+      font-weight:1000;
       font-size:13px;
       flex-wrap:wrap;
-      box-shadow: 0 10px 20px rgba(18,12,24,.06);
     }
-    .pill b{color:var(--text)}
+    .pill b{color:rgba(20,18,26,.92)}
     .badge{
       display:inline-flex; align-items:center; justify-content:center;
       padding:6px 10px;
       border-radius:999px;
       font-weight:1000;
       font-size:12px;
-      background: rgba(216,176,103,.20);
-      border:1px solid rgba(216,176,103,.35);
-      color:#6a4a17;
+      background: rgba(255,79,163,.14);
+      border:1px solid rgba(255,79,163,.22);
+      color:#7b2152;
     }
 
     header{
       position:sticky; top:0; z-index:20;
       backdrop-filter: blur(14px);
-      background: rgba(255,255,255,.75);
-      border-bottom:1px solid rgba(20,18,26,.08);
+      background: rgba(255,255,255,.72);
+      border-bottom:1px solid rgba(20,18,26,.06);
     }
     .topbar{
       display:flex; align-items:center; justify-content:space-between;
@@ -124,38 +123,46 @@
     }
     .logo{
       width:34px; height:34px; border-radius:12px;
-      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.2) 40%),
+      background: radial-gradient(circle at 30% 30%, #fff, rgba(255,255,255,.1) 40%),
                   linear-gradient(135deg, var(--pink), var(--gold));
-      box-shadow: 0 18px 45px rgba(255,79,163,.14);
-      border:1px solid rgba(20,18,26,.10);
+      box-shadow: 0 18px 45px rgba(255,79,163,.18);
+      border:1px solid rgba(255,255,255,.18);
       flex:0 0 auto;
     }
     nav{
       display:flex; gap:10px; align-items:center; flex-wrap:wrap;
       justify-content:flex-end;
     }
-    .navlink{
-      font-size:13px; color:var(--muted); font-weight:900;
-      padding:8px 10px; border-radius:12px;
-      border:1px solid transparent;
-      transition:.12s;
-      white-space:nowrap;
-    }
-    .navlink:hover{color:var(--text); border-color: rgba(20,18,26,.10); background: rgba(255,255,255,.70)}
 
-    .hero{ padding:30px 0 10px; position:relative; }
+    .hero{
+      padding:26px 0 14px;
+      position:relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(800px 420px at 10% 10%, rgba(255,79,163,.12), transparent 60%),
+        radial-gradient(700px 420px at 90% 30%, rgba(216,176,103,.12), transparent 55%);
+      pointer-events:none;
+      opacity:.95;
+    }
+    .hero .wrap{position:relative}
+
     .heroGrid{
       grid-template-columns: 1.2fr .8fr;
       align-items:stretch;
     }
-    @media (max-width: 920px){ .heroGrid{grid-template-columns:1fr} }
+    @media (max-width: 920px){
+      .heroGrid{grid-template-columns:1fr}
+    }
 
     .heroCard{
-      background: linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.78) 100%);
-      border:1px solid rgba(20,18,26,.10);
+      background: rgba(255,255,255,.86);
+      border:1px solid rgba(20,18,26,.08);
       border-radius: var(--radius2);
       padding:22px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 22px 70px rgba(18,12,24,.14);
       position:relative;
       overflow:hidden;
       min-width:0;
@@ -171,52 +178,77 @@
     }
 
     h1{
-      margin:10px 0 12px;
-      font-size: clamp(26px, 6.2vw, 46px);
-      line-height:1.05;
+      margin:10px 0 10px;
+      font-size: clamp(24px, 6.2vw, 44px);
+      line-height:1.07;
       letter-spacing:-.6px;
       word-break:break-word;
     }
     .grad{
-      background: linear-gradient(90deg, #1b0f17 0%, #7b2152 25%, #ff4fa3 55%, #c08a2c 100%);
+      background: linear-gradient(90deg, #1a0d14 0%, #7b2152 35%, #ff4fa3 65%, #b8841f 100%);
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
     }
     .sub{
-      color: var(--muted);
+      color: rgba(20,18,26,.76);
       font-size: 15px;
       line-height:1.55;
       max-width: 62ch;
-      margin:0 0 16px;
-      font-weight:700;
+      margin:0 0 10px;
+      font-weight:900;
     }
 
-    .heroBullets{display:grid; gap:10px; margin: 14px 0 18px}
+    /* Price line (top) */
+    .priceLine{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      margin: 10px 0 0;
+    }
+    .priceTag{
+      padding:10px 12px;
+      border-radius: 999px;
+      background: rgba(255,79,163,.10);
+      border:1px solid rgba(255,79,163,.20);
+      color: rgba(20,18,26,.88);
+      font-weight:1000;
+    }
+    .priceNote{
+      color: rgba(20,18,26,.70);
+      font-weight:1000;
+      font-size:13px;
+    }
+
+    .heroBullets{display:grid; gap:10px; margin: 14px 0 16px}
     .bullet{
       display:flex; gap:10px; align-items:flex-start;
       padding:10px 12px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.70);
+      border-radius: 16px;
+      background: rgba(255,255,255,.72);
       border:1px solid rgba(20,18,26,.08);
-      color: var(--muted);
-      font-weight:800;
+      color: rgba(20,18,26,.75);
+      font-weight:900;
       min-width:0;
     }
     .dot{
       width:10px; height:10px; border-radius:99px;
       margin-top:4px;
       background: linear-gradient(180deg, var(--pink), var(--gold));
-      box-shadow: 0 10px 20px rgba(255,79,163,.18);
+      box-shadow: 0 10px 20px rgba(255,79,163,.20);
       flex:0 0 auto;
     }
 
-    .heroActions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 10px; }
+    .heroActions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 10px;
+    }
     .miniTrust{
       display:flex; gap:10px; flex-wrap:wrap;
       margin-top: 14px;
-      color: var(--muted);
-      font-weight:900;
+      color: rgba(20,18,26,.70);
+      font-weight:1000;
       font-size:12px;
     }
     .miniTrust span{
@@ -228,37 +260,54 @@
 
     /* Timer */
     .timerCard{
-      background: linear-gradient(180deg, rgba(255,79,163,.14) 0%, rgba(255,255,255,.84) 100%);
+      background: rgba(255,255,255,.86);
       border:1px solid rgba(255,79,163,.22);
       border-radius: var(--radius2);
       padding:18px;
-      box-shadow: 0 18px 55px rgba(255,79,163,.10);
+      box-shadow: 0 22px 70px rgba(255,79,163,.12);
       display:flex; flex-direction:column; gap:14px;
       overflow:hidden;
       position:relative;
       min-width:0;
     }
+    .timerCard::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 180px at 20% 0%, rgba(255,79,163,.20), transparent 60%),
+                  radial-gradient(420px 180px at 100% 40%, rgba(216,176,103,.14), transparent 60%);
+      pointer-events:none;
+    }
+    .timerCard > *{position:relative}
     .timerTitle{
       display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
     }
-    .timerTitle h3{margin:0; font-size:16px; letter-spacing:-.2px}
+    .timerTitle h3{margin:0; font-size:16px; letter-spacing:-.2px; font-weight:1000}
     .timer{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap:10px;
     }
     .tbox{
-      background: rgba(255,255,255,.85);
+      background: rgba(255,255,255,.80);
       border:1px solid rgba(20,18,26,.10);
       border-radius: 18px;
       padding:14px 10px;
       text-align:center;
       min-width:0;
-      box-shadow: 0 10px 22px rgba(18,12,24,.07);
     }
-    .tbox .n{ font-size: 28px; font-weight: 1000; letter-spacing: .6px; }
-    .tbox .l{ color: var(--muted); font-weight:1000; font-size:12px; margin-top:2px; }
-    .timerHint{color: var(--muted); font-weight:900; font-size:13px; line-height:1.45}
+    .tbox .n{
+      font-size: 28px;
+      font-weight: 1000;
+      letter-spacing: .6px;
+      color:#1a0d14;
+    }
+    .tbox .l{
+      color: rgba(20,18,26,.65);
+      font-weight:1000;
+      font-size:12px;
+      margin-top:2px;
+    }
+    .timerHint{color: rgba(20,18,26,.70); font-weight:1000; font-size:13px; line-height:1.45}
 
     section{padding:24px 0}
     .sectionTitle{
@@ -270,28 +319,30 @@
       font-size: clamp(20px, 4.8vw, 30px);
       letter-spacing:-.4px;
     }
-    .sectionTitle p{margin:0; color:var(--muted); font-weight:800; max-width: 72ch}
+    .sectionTitle p{margin:0; color:rgba(20,18,26,.70); font-weight:900; max-width: 76ch}
 
-    .cards{ grid-template-columns: repeat(3, 1fr); }
+    .cards{
+      grid-template-columns: repeat(3, 1fr);
+    }
     @media (max-width: 920px){ .cards{grid-template-columns:1fr} }
 
     .card{
-      background: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.86);
       border:1px solid rgba(20,18,26,.08);
       border-radius: var(--radius2);
       padding:16px;
-      box-shadow: 0 16px 40px rgba(18,12,24,.10);
+      box-shadow: 0 16px 45px rgba(18,12,24,.10);
       position:relative;
       overflow:hidden;
       min-height: 150px;
       min-width:0;
     }
-    .card h3{margin:0 0 8px; font-size:16px}
-    .card p{margin:0; color:var(--muted); line-height:1.55; font-weight:800}
+    .card h3{margin:0 0 8px; font-size:16px; font-weight:1000}
+    .card p{margin:0; color:rgba(20,18,26,.70); line-height:1.55; font-weight:900}
     .card .icon{
       width:40px; height:40px; border-radius:16px;
       background: rgba(255,79,163,.12);
-      border:1px solid rgba(255,79,163,.18);
+      border:1px solid rgba(255,79,163,.16);
       display:flex; align-items:center; justify-content:center;
       margin-bottom:10px;
       box-shadow: 0 18px 45px rgba(255,79,163,.10);
@@ -299,21 +350,33 @@
     .icon svg{width:22px; height:22px; opacity:.95}
 
     /* Video grid */
-    .videoGrid{ grid-template-columns: repeat(2, 1fr); gap:14px; }
+    .videoGrid{
+      grid-template-columns: repeat(2, 1fr);
+      gap:14px;
+    }
     @media (max-width: 920px){ .videoGrid{grid-template-columns:1fr} }
+
     .video{
       border-radius: var(--radius2);
       overflow:hidden;
       border:1px solid rgba(20,18,26,.10);
-      background: rgba(255,255,255,.85);
-      box-shadow: var(--shadow);
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 16px 45px rgba(18,12,24,.10);
       position:relative;
       min-width:0;
     }
-    .video::before{ content:""; display:block; padding-top:56.25%; }
-    .video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+    .video::before{
+      content:"";
+      display:block;
+      padding-top:56.25%;
+    }
+    .video iframe{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      border:0;
+    }
 
-    /* Instructor */
+    /* Instructor (Larissa) */
     .instructor{
       display:grid;
       grid-template-columns: .95fr 1.05fr;
@@ -322,49 +385,67 @@
       border: 1px solid rgba(20,18,26,.08);
       border-radius: var(--radius2);
       padding:16px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 16px 45px rgba(18,12,24,.10);
       overflow:hidden;
       min-width:0;
     }
-    @media (max-width: 920px){ .instructor{grid-template-columns: 1fr} }
-
+    @media (max-width: 920px){
+      .instructor{grid-template-columns: 1fr}
+    }
     .instPhoto{
       border-radius: 22px;
-      border:1px solid rgba(20,18,26,.08);
+      border:1px solid rgba(20,18,26,.10);
       background:
-        radial-gradient(260px 160px at 20% 0%, rgba(255,79,163,.16), transparent 60%),
-        radial-gradient(260px 160px at 100% 40%, rgba(216,176,103,.14), transparent 60%),
-        rgba(255,255,255,.85);
+        radial-gradient(260px 160px at 20% 0%, rgba(255,79,163,.14), transparent 60%),
+        radial-gradient(260px 160px at 100% 40%, rgba(216,176,103,.12), transparent 60%),
+        rgba(255,255,255,.78);
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:18px;
-      min-height:260px;
-      position:relative;
+      padding:10px;
+      min-height:220px;
       overflow:hidden;
     }
     .instPhoto img{
       width:100%;
-      max-width: 420px;
       height:auto;
-      object-fit:contain;
-      filter: drop-shadow(0 20px 40px rgba(18,12,24,.20));
+      display:block;
+      border-radius: 18px;
+      border:1px solid rgba(20,18,26,.10);
     }
-    .instInfo h3{ margin:0 0 6px; font-size: 20px; letter-spacing:-.2px; }
-    .instInfo p{ margin:0 0 10px; color: var(--muted); font-weight:800; line-height:1.6; }
-    .instStats{ display:flex; gap:10px; flex-wrap:wrap; margin:10px 0 12px; }
+    .instInfo h3{
+      margin:0 0 6px;
+      font-size: 20px;
+      letter-spacing:-.2px;
+      font-weight:1000;
+    }
+    .instInfo p{
+      margin:0 0 10px;
+      color: rgba(20,18,26,.70);
+      font-weight:900;
+      line-height:1.55;
+    }
+    .instStats{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin:10px 0 12px;
+    }
     .instStats span{
       padding:8px 10px;
-      background: rgba(255,255,255,.78);
+      background: rgba(255,255,255,.70);
       border:1px solid rgba(20,18,26,.08);
       border-radius:999px;
       font-weight:1000;
-      color: rgba(20,18,26,.85);
+      color: rgba(20,18,26,.82);
       font-size:12px;
-      box-shadow: 0 10px 20px rgba(18,12,24,.06);
     }
-    .instActions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 6px; }
-    .igIcon{ width:18px; height:18px; display:inline-block; }
+    .instActions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 6px;
+    }
+    .igIcon{
+      width:18px; height:18px;
+      display:inline-block;
+    }
 
     /* FAQ */
     .faq{
@@ -372,9 +453,12 @@
       border:1px solid rgba(20,18,26,.08);
       border-radius: var(--radius2);
       overflow:hidden;
-      box-shadow: var(--shadow);
+      box-shadow: 0 16px 45px rgba(18,12,24,.10);
     }
-    .faqItem{ border-top:1px solid rgba(20,18,26,.08); background: rgba(255,255,255,.86); }
+    .faqItem{
+      border-top:1px solid rgba(20,18,26,.08);
+      background: rgba(255,255,255,.86);
+    }
     .faqItem:first-child{border-top:none}
     .faqQ{
       display:flex; align-items:center; justify-content:space-between; gap:14px;
@@ -384,11 +468,11 @@
       letter-spacing:-.2px;
       min-width:0;
     }
-    .faqQ span{color: var(--text); min-width:0}
+    .faqQ span{color: rgba(20,18,26,.92); min-width:0}
     .chev{
       width:34px; height:34px; border-radius: 14px;
       border:1px solid rgba(20,18,26,.10);
-      background: rgba(255,255,255,.80);
+      background: rgba(255,255,255,.70);
       display:flex; align-items:center; justify-content:center;
       transition: transform .15s ease;
       flex:0 0 auto;
@@ -400,11 +484,11 @@
     }
     .faqA > div{
       padding:0 16px 16px;
-      color: var(--muted);
-      line-height:1.6;
-      font-weight:800;
+      color: rgba(20,18,26,.70);
+      line-height:1.55;
+      font-weight:900;
     }
-    .faqItem.open .faqA{max-height:640px}
+    .faqItem.open .faqA{max-height:520px}
     .faqItem.open .chev{transform: rotate(180deg)}
 
     /* CTA strip */
@@ -423,22 +507,25 @@
       gap:12px;
       padding:12px 12px;
       border-radius: 18px;
-      background: rgba(255,255,255,.85);
-      border:1px solid rgba(20,18,26,.10);
+      background: rgba(255,255,255,.80);
+      border:1px solid rgba(20,18,26,.08);
       backdrop-filter: blur(16px);
       box-shadow: 0 18px 55px rgba(18,12,24,.14);
     }
-    .ctaLeft{ display:flex; flex-direction:column; gap:2px; min-width: 0; }
+    .ctaLeft{
+      display:flex; flex-direction:column; gap:2px;
+      min-width: 0;
+    }
     .ctaLeft b{font-size:13px}
-    .ctaLeft small{color: var(--muted); font-weight:900}
+    .ctaLeft small{color: rgba(20,18,26,.70); font-weight:1000}
 
     footer{
-      padding:26px 0 56px;
-      color: var(--muted);
-      border-top: 1px solid rgba(20,18,26,.10);
+      padding:24px 0 56px;
+      color: rgba(20,18,26,.70);
+      border-top: 1px solid rgba(20,18,26,.06);
       margin-top: 18px;
     }
-    footer a{color:#b51f63; font-weight:1000}
+    footer a{color:#7b2152; font-weight:1000}
     .disclaimer{ font-size:12px; line-height:1.6; opacity:.95; font-weight:800; }
     .note{ font-size:12px; color: rgba(20,18,26,.70); font-weight:900; margin-top:10px; }
 
@@ -447,23 +534,28 @@
     ============================ */
     .modalOverlay{
       position:fixed; inset:0;
+      overflow:auto;
+      -webkit-overflow-scrolling: touch;
       background: rgba(10,8,12,.55);
       display:none;
-      align-items:flex-start;
+      align-items:center;
       justify-content:center;
       padding:16px;
       z-index:60;
-    overflow:auto; -webkit-overflow-scrolling:touch;}
+    }
     .modalOverlay.open{ display:flex; }
     .modal{
       width:min(980px, 100%);
+      max-height: 90vh;
+      display:flex;
+      flex-direction:column;
       background: rgba(255,255,255,.92);
       border:1px solid rgba(255,255,255,.35);
       border-radius: 28px;
       box-shadow: 0 30px 90px rgba(10,8,12,.35);
       overflow:hidden;
       position:relative;
-    display:flex; flex-direction:column; max-height:calc(100vh - 44px);}
+    }
     .modalHeader{
       display:flex;
       align-items:center;
@@ -484,7 +576,7 @@
     }
     .modalHeader p{
       margin:3px 0 0;
-      color:var(--muted);
+      color: rgba(20,18,26,.70);
       font-weight:900;
       font-size:12px;
     }
@@ -499,8 +591,10 @@
     }
     .modalBody{
       padding:16px;
+      overflow:auto;
+      -webkit-overflow-scrolling: touch;
       background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,247,251,.92));
-    flex:1; overflow:auto; -webkit-overflow-scrolling:touch;}
+    }
 
     .planGrid{
       display:grid;
@@ -639,33 +733,160 @@
       border:1px solid rgba(20,18,26,.10);
     }
 
+    /* ===========================
+       DEPOIMENTOS (PROVA SOCIAL)
+    ============================ */
+    .testiGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top: 10px;
+    }
+    @media (max-width: 920px){
+      .testiGrid{ grid-template-columns: 1fr; }
+    }
+    .testiCard{
+      background: rgba(255,255,255,.86);
+      border:1px solid rgba(20,18,26,.08);
+      border-radius: 26px;
+      padding:16px;
+      box-shadow: 0 16px 45px rgba(18,12,24,.10);
+      position:relative;
+      overflow:hidden;
+      min-width:0;
+    }
+    .testiCard::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(420px 220px at 20% 0%, rgba(255,79,163,.10), transparent 60%),
+        radial-gradient(420px 220px at 100% 40%, rgba(216,176,103,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .testiCard > *{ position:relative; }
+    .testiTop{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:10px;
+      min-width:0;
+    }
+    .avatar{
+      width:44px; height:44px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255,79,163,.9), rgba(216,176,103,.85));
+      border:1px solid rgba(255,255,255,.65);
+      box-shadow: 0 18px 40px rgba(255,79,163,.14);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:1000;
+      color:#1b1016;
+      flex:0 0 auto;
+    }
+    .testiName{
+      font-weight:1000;
+      letter-spacing:-.2px;
+      min-width:0;
+    }
+    .testiMeta{
+      color: rgba(20,18,26,.70);
+      font-weight:900;
+      font-size:12px;
+      margin-top:2px;
+    }
+    .stars{
+      display:inline-flex;
+      gap:2px;
+      margin-left:auto;
+      color:#b8841f;
+      font-weight:1000;
+      flex:0 0 auto;
+      white-space:nowrap;
+    }
+    .testiText{
+      color: rgba(20,18,26,.80);
+      font-weight:900;
+      line-height:1.55;
+      margin:0;
+    }
+    .proofRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 12px;
+      color: rgba(20,18,26,.72);
+      font-weight:1000;
+      font-size:12px;
+    }
+    .proofRow span{
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.65);
+      border:1px solid rgba(20,18,26,.10);
+    }
+
     /* MOBILE FIX PACK */
     @media (max-width: 720px){
       .wrap{padding:0 14px}
-      .topbar{ flex-direction:column; align-items:flex-start; gap:10px; }
-      nav{ width:100%; justify-content:flex-start; gap:8px; }
-      nav .btn{ width:100%; white-space:normal; }
+
+      .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+      }
+      nav{
+        width:100%;
+        justify-content:flex-start;
+        gap:8px;
+      }
+      nav .btn{
+        width:100%;
+        white-space:normal;
+      }
 
       .hero{padding:16px 0 10px}
       .heroCard{padding:16px}
       .timerCard{padding:14px}
-      .heroActions .btn{ width:100%; white-space:normal; }
-      .miniTrust span{flex:1 1 auto; text-align:center}
-      section{padding:18px 0}
 
-      .ctaInner{ flex-direction:column; align-items:stretch; gap:10px; }
+      .heroActions .btn{
+        width:100%;
+        white-space:normal;
+      }
+
+      .miniTrust span{flex:1 1 auto; text-align:center}
+      .priceNote{font-size:12px}
+
+      .timer{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .tbox{padding:12px 8px; border-radius:16px}
+      .tbox .n{font-size:24px}
+
+      section{padding:18px 0}
+      .sectionTitle{gap:8px}
+      .sectionTitle p{font-size:13px; line-height:1.45}
+
+      .card{min-height:auto; padding:14px}
+      .card h3{font-size:15px}
+
+      .faqQ{padding:14px 14px}
+      .faqA > div{padding:0 14px 14px}
+
+      .ctaInner{
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+      }
       .ctaLeft{align-items:center; text-align:center}
-      .ctaInner .btn{ width:100%; white-space:normal; }
+      .ctaInner .btn{
+        width:100%;
+        white-space:normal;
+      }
+
       footer{padding-bottom:84px}
     }
-  
-/* Modal scroll fix (mobile) */
-@media (max-width: 720px){
-  .modalOverlay{padding:14px 14px 44px;}
-  .modal{border-radius: 20px; max-height:calc(100vh - 28px);}
-}
-
-</style>
+  </style>
 </head>
 
 <body>
@@ -675,16 +896,13 @@
         <div class="logo" aria-hidden="true"></div>
         <div>
           <div style="font-size:14px;">Viver de Cílios</div>
-          <div style="font-size:12px; color:var(--muted); font-weight:900;">Curso Online • 4 Técnicas</div>
+          <div style="font-size:12px; color:rgba(20,18,26,.70); font-weight:1000;">Curso Online • 4 Técnicas</div>
         </div>
       </div>
 
       <nav>
-        <a class="navlink" href="#conteudo">Conteúdo</a>
-        <a class="navlink" href="#professora">Professora</a>
-        <a class="navlink" href="#videos">Vídeos</a>
-        <a class="navlink" href="#faq">Perguntas</a>
-        <button class="btn btn-primary" data-open-plans type="button">Quero conhecer os planos</button>
+        <a class="btn btn-primary" data-go-plan="start" href="#">COMEÇAR AGORA — R$97</a>
+        <a class="btn btn-ghost" data-open-plans href="#" style="font-weight:1000;">Ver outros planos</a>
       </nav>
     </div>
   </header>
@@ -694,26 +912,31 @@
       <div class="wrap grid heroGrid">
         <div class="heroCard">
           <div class="pill">
-            <span class="badge">PROMO</span>
-            <span><b>Oferta por tempo limitado</b> • escolha seu plano e garanta sua vaga</span>
+            <span class="badge">OFERTA</span>
+            <span><b>Plano Start por R$97</b> • acesso imediato após confirmação</span>
           </div>
 
-          <h1 class="grad">Transforme-se em uma Master em Extensão de Cílios</h1>
+          <h1 class="grad">Curso Completo de Extensão de Cílios — a partir de <span style="white-space:nowrap;">R$97</span></h1>
           <p class="sub">
-            Curso completo com <b>4 técnicas</b> (Fio a Fio, Volume Russo, Híbrido e Volume Brasileiro),
-            apostila em PDF, fichas de atendimento e suporte. Estude no seu ritmo e comece a atender com segurança.
+            Aprenda do zero com aulas online, <b>4 técnicas profissionais</b> (Fio a Fio, Volume Russo, Híbrido e Brasileiro),
+            materiais em PDF, fichas prontas e suporte. <b>Plano Start por R$97</b> e parcelamento disponível no checkout.
           </p>
+
+          <div class="priceLine" aria-label="Preço do curso">
+            <span class="priceTag">A partir de <b>R$97</b></span>
+            <span class="priceNote">Pagamento seguro via Hotmart • Parcelamento no checkout</span>
+          </div>
 
           <div class="heroBullets">
             <div class="bullet"><span class="dot"></span><div><b>Do zero ao avançado</b> — passo a passo, sem enrolação.</div></div>
             <div class="bullet"><span class="dot"></span><div><b>Conteúdo prático</b> — técnicas aplicáveis para atender e evoluir.</div></div>
-            <div class="bullet"><span class="dot"></span><div><b>Certificado</b> — para reforçar credibilidade e profissionalismo.</div></div>
+            <div class="bullet"><span class="dot"></span><div><b>Certificado</b> — conforme regras do produtor na plataforma.</div></div>
           </div>
 
           <div class="heroActions">
-            <button class="btn btn-primary" data-open-plans type="button">Quero conhecer os planos</button>
-            <a class="btn" href="#videos">Ver vídeos de alunas</a>
-            <a class="btn" href="#professora">Conhecer a professora</a>
+            <a class="btn btn-primary" data-go-plan="start" href="#">COMEÇAR AGORA — R$97</a>
+            <a class="btn btn-ghost" data-open-plans href="#">Ver planos (Start/Expert/Master)</a>
+            <a class="btn" href="#depoimentos">Ver depoimentos</a>
           </div>
 
           <div class="miniTrust">
@@ -730,7 +953,7 @@
 
         <aside class="timerCard" aria-label="Contagem regressiva da oferta">
           <div class="timerTitle">
-            <h3>⏳ Promoção expira em:</h3>
+            <h3>⏳ Oferta expira em:</h3>
             <span class="pill" title="Timer por visitante">Timer individual</span>
           </div>
 
@@ -750,11 +973,12 @@
           </div>
 
           <p class="timerHint">
-            Clique e escolha seu plano enquanto a promoção está ativa.
-            Quando o tempo acabar, o timer reinicia para uma próxima janela (por visitante).
+            Clique e garanta a vaga enquanto está disponível. Quando o tempo acabar, o timer reinicia
+            para uma próxima janela (por visitante).
           </p>
 
-          <button class="btn btn-primary" data-open-plans type="button">Quero garantir agora</button>
+          <a class="btn btn-primary" data-go-plan="start" href="#">COMEÇAR AGORA — R$97</a>
+          <a class="btn btn-ghost" data-open-plans href="#">Ver outros planos</a>
           <a class="btn" href="#conteudo">Ver o que está incluso</a>
         </aside>
       </div>
@@ -770,7 +994,7 @@
         <div class="grid cards">
           <div class="card">
             <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="black" stroke-opacity=".7" stroke-width="1.7"/><path d="M8 8h8M8 12h8M8 16h6" stroke="black" stroke-opacity=".55" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="white" stroke-opacity=".9" stroke-width="1.7"/><path d="M8 8h8M8 12h8M8 16h6" stroke="white" stroke-opacity=".75" stroke-width="1.7" stroke-linecap="round"/></svg>
             </div>
             <h3>4 Técnicas completas</h3>
             <p>Fio a Fio • Volume Russo • Volume Híbrido • Volume Brasileiro (com direcionamento e prática).</p>
@@ -778,7 +1002,7 @@
 
           <div class="card">
             <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 3 7v6c0 5 4 8 9 8s9-3 9-8V7l-9-4Z" stroke="black" stroke-opacity=".7" stroke-width="1.7"/><path d="M8.5 12l2.2 2.2L15.5 9.4" stroke="black" stroke-opacity=".6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 3 7v6c0 5 4 8 9 8s9-3 9-8V7l-9-4Z" stroke="white" stroke-opacity=".9" stroke-width="1.7"/><path d="M8.5 12l2.2 2.2L15.5 9.4" stroke="white" stroke-opacity=".85" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3>Apostila + Fichas</h3>
             <p>Apostila em PDF, ficha de cuidados e ficha de anamnese para organizar atendimento com profissionalismo.</p>
@@ -786,7 +1010,7 @@
 
           <div class="card">
             <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a6 6 0 0 1 6 6c0 2.2-1.2 4.2-3 5.2V16a3 3 0 0 1-6 0v-2.8A6 6 0 0 1 12 2Z" stroke="black" stroke-opacity=".7" stroke-width="1.7"/><path d="M9 20h6" stroke="black" stroke-opacity=".6" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a6 6 0 0 1 6 6c0 2.2-1.2 4.2-3 5.2V16a3 3 0 0 1-6 0v-2.8A6 6 0 0 1 12 2Z" stroke="white" stroke-opacity=".9" stroke-width="1.7"/><path d="M9 20h6" stroke="white" stroke-opacity=".8" stroke-width="1.7" stroke-linecap="round"/></svg>
             </div>
             <h3>Suporte + evolução</h3>
             <p>Orientação para tirar dúvidas e melhorar a execução. Estude no ritmo ideal e refine sua técnica.</p>
@@ -794,7 +1018,8 @@
         </div>
 
         <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
-          <button class="btn btn-primary" data-open-plans type="button">Quero conhecer os planos</button>
+          <a class="btn btn-primary" data-go-plan="start" href="#">COMEÇAR AGORA — R$97</a>
+          <a class="btn btn-ghost" data-open-plans href="#">Ver outros planos</a>
           <a class="btn" href="#faq">Ver perguntas frequentes</a>
         </div>
       </div>
@@ -804,18 +1029,18 @@
       <div class="wrap">
         <div class="sectionTitle">
           <h2>Aprenda com quem sabe: Larissa Costa</h2>
-          <p>Mais credibilidade e mais confiança para você investir no aprendizado certo.</p>
+          <p>Autoridade no nicho + ensino estruturado para você aprender com clareza e confiança.</p>
         </div>
 
         <div class="instructor">
-          <div class="instPhoto" aria-label="Foto da professora Larissa Costa">
-            <img src="/Larissa-Costa1.png" alt="Larissa Costa" loading="lazy" />
+          <div class="instPhoto" aria-label="Foto da professora">
+            <img src="Larissa-Costa1.png" alt="Larissa Costa" loading="lazy">
           </div>
 
           <div class="instInfo">
             <h3>Larissa Costa</h3>
             <p>
-              Estudo online com metodologia e organização. Você aprende do básico ao avançado,
+              Metodologia organizada para você aprender do básico ao avançado,
               com conteúdo prático para aplicar no dia a dia e evoluir técnica com mais segurança.
             </p>
 
@@ -827,12 +1052,12 @@
             </div>
 
             <div class="instActions">
-              <button class="btn btn-primary" data-open-plans type="button">Quero conhecer os planos</button>
-              <a class="btn btn-ghost" data-ig href="#" rel="nofollow sponsored" target="_blank">
+              <a class="btn btn-primary" data-go-plan="start" href="#">COMEÇAR AGORA — R$97</a>
+              <a class="btn btn-ghost" data-ig href="#">
                 <svg class="igIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="black" stroke-opacity=".65" stroke-width="1.6"/>
-                  <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="black" stroke-opacity=".65" stroke-width="1.6"/>
-                  <path d="M17.5 6.5h.01" stroke="black" stroke-opacity=".65" stroke-width="3.2" stroke-linecap="round"/>
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="white" stroke-opacity=".85" stroke-width="1.6"/>
+                  <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="white" stroke-opacity=".85" stroke-width="1.6"/>
+                  <path d="M17.5 6.5h.01" stroke="white" stroke-opacity=".85" stroke-width="3.2" stroke-linecap="round"/>
                 </svg>
                 Instagram da Larissa
               </a>
@@ -846,26 +1071,66 @@
       </div>
     </section>
 
-    <section>
+    <section id="depoimentos">
       <div class="wrap">
         <div class="sectionTitle">
-          <h2>Para quem é este curso</h2>
-          <p>Se você quer aprender, melhorar técnica ou atender com mais segurança, aqui é o caminho.</p>
+          <h2>Depoimentos de alunas</h2>
+          <p>Prova social ajuda na decisão. Modelo pronto — substitua pelos depoimentos reais que você tiver (nome, foto e texto).</p>
         </div>
 
-        <div class="grid cards">
-          <div class="card">
-            <h3>Iniciante (do zero)</h3>
-            <p>Sem contato com a profissão? Você aprende do básico ao avançado com estrutura e organização.</p>
+        <div class="proofRow" aria-label="Indicadores rápidos">
+          <span>✅ Acesso online imediato</span>
+          <span>✅ Certificado (conforme regras do produtor)</span>
+          <span>✅ 4 técnicas no curso</span>
+          <span>✅ Plano Start a partir de R$97</span>
+        </div>
+
+        <div class="testiGrid">
+          <div class="testiCard">
+            <div class="testiTop">
+              <div class="avatar">AP</div>
+              <div style="min-width:0">
+                <div class="testiName">Ana P. <span class="testiMeta">• Iniciante</span></div>
+                <div class="testiMeta">Antes: insegura na prática • Depois: iniciou atendimentos</div>
+              </div>
+              <div class="stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+            <p class="testiText">“Eu não sabia por onde começar. As aulas foram bem diretas e eu consegui montar uma rotina de treino. Em pouco tempo já estava atendendo amigas.”</p>
           </div>
-          <div class="card">
-            <h3>Quer independência</h3>
-            <p>Aprenda uma habilidade prática para construir sua renda e seus horários com mais autonomia.</p>
+
+          <div class="testiCard">
+            <div class="testiTop">
+              <div class="avatar">ML</div>
+              <div style="min-width:0">
+                <div class="testiName">Mariana L. <span class="testiMeta">• Já fazia fio a fio</span></div>
+                <div class="testiMeta">Antes: resultado inconsistente • Depois: melhor acabamento</div>
+              </div>
+              <div class="stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+            <p class="testiText">“Eu travava no acabamento e na retenção. O passo a passo e as fichas ajudaram muito. Hoje meu trabalho ficou mais profissional.”</p>
           </div>
-          <div class="card">
-            <h3>Já fez curso e travou</h3>
-            <p>Volte para uma base sólida, melhore execução e evolua técnica com mais clareza.</p>
+
+          <div class="testiCard">
+            <div class="testiTop">
+              <div class="avatar">CS</div>
+              <div style="min-width:0">
+                <div class="testiName">Camila S. <span class="testiMeta">• Transição de carreira</span></div>
+                <div class="testiMeta">Antes: só vídeos soltos • Depois: método + suporte</div>
+              </div>
+              <div class="stars" aria-label="5 estrelas">★★★★★</div>
+            </div>
+            <p class="testiText">“Eu ficava perdida com vídeo solto. Aqui foi diferente: método + prática. As dúvidas que eu tinha foram resolvidas rápido.”</p>
           </div>
+        </div>
+
+        <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" data-go-plan="start" href="#">COMEÇAR AGORA — R$97</a>
+          <a class="btn btn-ghost" data-open-plans href="#">Ver outros planos</a>
+          <a class="btn" href="#videos">Ver vídeos</a>
+        </div>
+
+        <div class="note" style="margin-top:10px;">
+          *Depoimentos acima são exemplos de layout. Substitua por relatos reais para maximizar confiança. Resultados variam.
         </div>
       </div>
     </section>
@@ -880,7 +1145,8 @@
         <div class="grid videoGrid" id="videoGrid"></div>
 
         <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
-          <button class="btn btn-primary" data-open-plans type="button">Quero me inscrever agora</button>
+          <a class="btn btn-primary" data-go-plan="start" href="#">COMEÇAR AGORA — R$97</a>
+          <a class="btn btn-ghost" data-open-plans href="#">Ver outros planos</a>
           <a class="btn" href="#faq">Ainda tenho dúvidas</a>
         </div>
       </div>
@@ -969,8 +1235,9 @@
         </div>
 
         <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
-          <button class="btn btn-primary" data-open-plans type="button">QUERO CONHECER OS PLANOS</button>
-          <a class="btn btn-ghost" data-ig href="#" rel="nofollow sponsored" target="_blank">Instagram da Larissa</a>
+          <a class="btn btn-primary" data-go-plan="start" href="#">COMEÇAR AGORA — R$97</a>
+          <a class="btn btn-ghost" data-open-plans href="#">Ver outros planos</a>
+          <a class="btn btn-ghost" data-ig href="#">Instagram da Larissa</a>
         </div>
       </div>
     </section>
@@ -978,10 +1245,10 @@
     <div class="wrap ctaStrip">
       <div class="ctaInner">
         <div class="ctaLeft">
-          <b>Oferta ativa agora • Escolha seu plano</b>
-          <small>Você clica quando quiser ✅</small>
+          <b>Plano Start por R$97 • Garanta sua vaga</b>
+          <small>Pagamento seguro via Hotmart • Acesso imediato após confirmação ✅</small>
         </div>
-        <button class="btn btn-primary" data-open-plans type="button">Quero conhecer os planos</button>
+        <a class="btn btn-primary" data-go-plan="start" href="#">COMEÇAR AGORA — R$97</a>
       </div>
     </div>
   </main>
@@ -989,7 +1256,7 @@
   <footer>
     <div class="wrap">
       <div class="disclaimer">
-        <b>Aviso:</b> Esta página é informativa e direciona para o checkout oficial do produtor.
+        <b>Aviso:</b> Esta página é informativa e direciona para o checkout oficial do produtor (Hotmart).
         Não prometemos ganhos, resultados garantidos ou afirmações irreais. Resultados variam conforme dedicação, prática e contexto.
       </div>
       <div class="note">
@@ -1000,80 +1267,63 @@
 
   <!-- MODAL PLANOS -->
   <div class="modalOverlay" id="plansOverlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-label="Escolha seu plano">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Escolher plano">
       <div class="modalHeader">
         <div>
-          <h3>Escolha o plano ideal para você</h3>
-          <p>Você será direcionada para o checkout oficial (Hotmart). Links com rastreio (gclid/utm) preservados.</p>
+          <h3>Escolha o melhor plano para você</h3>
+          <p>Pagamento seguro via Hotmart. Acesso liberado após confirmação.</p>
         </div>
         <button class="closeBtn" id="closePlans" type="button">Fechar ✕</button>
       </div>
 
       <div class="modalBody">
         <div class="planGrid">
-          <!-- START -->
-          <div class="planCard">
+          <div class="planCard" style="background:#ffeaf5;">
             <div class="planInner">
-              <h4 class="planName">PLANO START</h4>
-              <div class="planSub">VEJA O QUE VOCÊ TERÁ ACESSO</div>
+              <div class="planName">START</div>
+              <div class="planSub">Entrada • Melhor custo</div>
+
               <ul class="planList">
-                <li><span class="checkDot"><span>✓</span></span>Fio a Fio</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Russo</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Híbrido</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Brasileiro</li>
-                <li><span class="checkDot"><span>✓</span></span>Apostila PDF</li>
-                <li><span class="checkDot"><span>✓</span></span>Ficha de Cuidados</li>
-                <li><span class="checkDot"><span>✓</span></span>Ficha de Anamnese</li>
-                <li><span class="checkDot"><span>✓</span></span>Planilha de Gastos</li>
-                <li><span class="checkDot"><span>✓</span></span>Comunidade</li>
-                <li><span class="checkDot"><span>✓</span></span>Suporte</li>
+                <li><span class="checkDot"><span>✓</span></span> Acesso ao curso</li>
+                <li><span class="checkDot"><span>✓</span></span> 4 técnicas</li>
+                <li><span class="checkDot"><span>✓</span></span> Materiais em PDF</li>
+                <li><span class="checkDot"><span>✓</span></span> Estude no seu ritmo</li>
               </ul>
 
               <div class="planPrice">
-                <small>12X DE</small>
-                <b>R$ 10,27</b>
-                <div class="avista">ou R$ 97,00 à vista</div>
+                <small>A partir de</small>
+                <b>R$97</b>
+                <div class="avista">Parcelamento no checkout</div>
               </div>
 
               <div class="planCtas">
-                <button class="planBtn" data-plan="start" type="button">QUERO ME INSCREVER AGORA</button>
+                <button class="planBtn" data-plan="start" type="button">QUERO ESSE PLANO</button>
               </div>
 
               <div class="planFootIcons">
                 <span>🛡️ Compra Segura</span>
-                <span>⭐ Satisfação</span>
+                <span>⚡ Acesso Rápido</span>
                 <span>🔒 Privacidade</span>
               </div>
             </div>
           </div>
 
-          <!-- EXPERT -->
-          <div class="planCard">
+          <div class="planCard" style="background:#fff6e8;">
             <div class="planInner">
-              <h4 class="planName">PLANO EXPERT</h4>
-              <div class="planSub">VEJA O QUE VOCÊ TERÁ ACESSO</div>
+              <div class="planName">EXPERT</div>
+              <div class="planSub">Mais escolhido</div>
+
               <ul class="planList">
-                <li><span class="checkDot"><span>✓</span></span>Fio a Fio</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Russo</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Híbrido</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Brasileiro</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Indiano</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Egípcio</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Express</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Color</li>
-                <li><span class="checkDot"><span>✓</span></span>Mega Volume</li>
-                <li><span class="checkDot"><span>✓</span></span>Apostila PDF</li>
-                <li><span class="checkDot"><span>✓</span></span>Ficha de Cuidados</li>
-                <li><span class="checkDot"><span>✓</span></span>Ficha de Anamnese</li>
-                <li><span class="checkDot"><span>✓</span></span>Planilha de Gastos</li>
-                <li><span class="checkDot"><span>✓</span></span>Comunidade</li>
-                <li><span class="checkDot"><span>✓</span></span>Suporte</li>
+                <li><span class="checkDot"><span>✓</span></span> Tudo do Start</li>
+                <li><span class="checkDot"><span>✓</span></span> Conteúdo avançado</li>
+                <li><span class="checkDot"><span>✓</span></span> Materiais extras</li>
+                <li><span class="checkDot"><span>✓</span></span> Melhor custo-benefício</li>
               </ul>
 
               <div class="planPrice">
-                <small>12X DE</small>
-                <b>R$ 20,86</b>
-                <div class="avista">ou R$ 197,00 à vista</div>
+                <small>Ver valor no</small>
+                <b>Checkout</b>
+                <div class="avista">Condições podem variar</div>
               </div>
 
               <div class="planCtas">
@@ -1082,46 +1332,28 @@
 
               <div class="planFootIcons">
                 <span>🛡️ Compra Segura</span>
-                <span>⭐ Satisfação</span>
+                <span>⭐ Preferido</span>
                 <span>🔒 Privacidade</span>
               </div>
             </div>
           </div>
 
-          <!-- MASTER -->
-          <div class="planCard">
+          <div class="planCard" style="background:#f1fbff;">
             <div class="planInner">
-              <h4 class="planName">PLANO MASTER</h4>
-              <div class="planSub">VEJA O QUE VOCÊ TERÁ ACESSO</div>
+              <div class="planName">MASTER</div>
+              <div class="planSub">Completo</div>
+
               <ul class="planList">
-                <li><span class="checkDot"><span>✓</span></span>Fio a Fio</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Russo</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Híbrido</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Brasileiro</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Indiano</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Egípcio</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Express</li>
-                <li><span class="checkDot"><span>✓</span></span>Volume Color</li>
-                <li><span class="checkDot"><span>✓</span></span>Mega Volume</li>
-                <li><span class="checkDot"><span>✓</span></span>Fox Eyes</li>
-                <li><span class="checkDot"><span>✓</span></span>Efeito Molhado</li>
-                <li><span class="checkDot"><span>✓</span></span>Kim Kardashian</li>
-                <li><span class="checkDot"><span>✓</span></span>Técnica em Camadas</li>
-                <li><span class="checkDot"><span>✓</span></span>Capping</li>
-                <li><span class="checkDot"><span>✓</span></span>Topline</li>
-                <li><span class="checkDot"><span>✓</span></span>Apostila PDF</li>
-                <li><span class="checkDot"><span>✓</span></span>Ficha de Cuidados</li>
-                <li><span class="checkDot"><span>✓</span></span>Ficha de Anamnese</li>
-                <li><span class="checkDot"><span>✓</span></span>Planilha de Gastos</li>
-                <li><span class="checkDot"><span>✓</span></span>Comunidade</li>
-                <li><span class="checkDot"><span>✓</span></span>Suporte VIP</li>
-                <li><span class="checkDot"><span>✓</span></span>Bônus: Marketing Digital</li>
+                <li><span class="checkDot"><span>✓</span></span> Tudo do Expert</li>
+                <li><span class="checkDot"><span>✓</span></span> Acesso mais completo</li>
+                <li><span class="checkDot"><span>✓</span></span> Conteúdo premium</li>
+                <li><span class="checkDot"><span>✓</span></span> Ideal para acelerar evolução</li>
               </ul>
 
               <div class="planPrice">
-                <small>12X DE</small>
-                <b>R$ 31,44</b>
-                <div class="avista">ou R$ 297,00 à vista</div>
+                <small>Ver valor no</small>
+                <b>Checkout</b>
+                <div class="avista">Condições podem variar</div>
               </div>
 
               <div class="planCtas">
@@ -1185,73 +1417,22 @@
       return checkout.toString();
     }
 
-    // Link de credibilidade (instagram tracking)
+    // ==============================
+    // LINKS DIRETOS POR PLANO (sem modal)
+    // ==============================
+    document.querySelectorAll("[data-go-plan]").forEach(el => {
+      const plan = el.getAttribute("data-go-plan");
+      const base = PLAN_URLS[plan] || PLAN_URLS.start;
+      el.href = withTracking(base);
+      el.rel = "nofollow sponsored";
+      el.target = "_blank";
+    });
+
+    // Botões de credibilidade -> instagram (tracking)
     document.querySelectorAll("[data-ig]").forEach(a => {
-      a.href = withTracking(INSTAGRAM_TRACK_URL);
+      a.href = INSTAGRAM_TRACK_URL;
       a.rel = "nofollow sponsored";
       a.target = "_blank";
-    });
-
-    // ==============================
-    // MODAL PLANOS
-    // ==============================
-    const overlay = document.getElementById("plansOverlay");
-    const closePlans = document.getElementById("closePlans");
-
-    let __lockScrollY = 0;
-function lockBodyScroll(){
-  __lockScrollY = window.scrollY || 0;
-  // iOS/Safari-friendly scroll lock:
-  document.body.style.position = "fixed";
-  document.body.style.top = `-${__lockScrollY}px`;
-  document.body.style.left = "0";
-  document.body.style.right = "0";
-  document.body.style.width = "100%";
-}
-function unlockBodyScroll(){
-  document.body.style.position = "";
-  const y = __lockScrollY;
-  document.body.style.top = "";
-  document.body.style.left = "";
-  document.body.style.right = "";
-  document.body.style.width = "";
-  window.scrollTo(0, y);
-}
-
-function openPlans(){
-  overlay.classList.add("open");
-  overlay.setAttribute("aria-hidden","false");
-  overlay.scrollTop = 0; // garante que abre no topo no celular
-  lockBodyScroll();
-}
-function closePlansFn(){
-  overlay.classList.remove("open");
-  overlay.setAttribute("aria-hidden","true");
-  unlockBodyScroll();
-}
-
-    document.querySelectorAll("[data-open-plans]").forEach(btn => {
-      btn.addEventListener("click", openPlans);
-    });
-
-    closePlans.addEventListener("click", closePlansFn);
-
-    overlay.addEventListener("click", (e) => {
-      if (e.target === overlay) closePlansFn();
-    });
-
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && overlay.classList.contains("open")) closePlansFn();
-    });
-
-    // Botões dentro dos planos
-    document.querySelectorAll("[data-plan]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const plan = btn.getAttribute("data-plan");
-        const url = PLAN_URLS[plan];
-        if (!url) return;
-        window.open(withTracking(url), "_blank", "noopener,noreferrer");
-      });
     });
 
     // ==============================
@@ -1287,7 +1468,8 @@ function closePlansFn(){
     // ==============================
     // TIMER 5 MIN (persistente por visitante)
     // ==============================
-    const LS_KEY = "promo_timer_end_v2";
+    const LS_KEY = "promo_timer_end_v1";
+
     function getEndTime() {
       const now = Date.now();
       const stored = Number(localStorage.getItem(LS_KEY) || 0);
@@ -1298,6 +1480,7 @@ function closePlansFn(){
       }
       return stored;
     }
+
     let endTime = getEndTime();
 
     const tMin = document.getElementById("tMin");
@@ -1331,6 +1514,71 @@ function closePlansFn(){
     requestAnimationFrame(tick);
 
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ==============================
+    // MODAL PLANOS (com scroll mobile)
+    // ==============================
+    const overlay = document.getElementById("plansOverlay");
+    const closeBtn = document.getElementById("closePlans");
+
+    function lockBodyScroll() {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      document.body.dataset.scrollY = String(scrollY);
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
+    }
+
+    function unlockBodyScroll() {
+      const scrollY = Number(document.body.dataset.scrollY || 0);
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollY);
+    }
+
+    function openPlans() {
+      overlay.classList.add("open");
+      overlay.setAttribute("aria-hidden", "false");
+      lockBodyScroll();
+    }
+
+    function closePlans() {
+      overlay.classList.remove("open");
+      overlay.setAttribute("aria-hidden", "true");
+      unlockBodyScroll();
+    }
+
+    document.querySelectorAll("[data-open-plans]").forEach(el => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        openPlans();
+      });
+    });
+
+    closeBtn.addEventListener("click", closePlans);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closePlans();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && overlay.classList.contains("open")) closePlans();
+    });
+
+    // ==============================
+    // BOTÕES DO MODAL -> checkout por plano
+    // ==============================
+    document.querySelectorAll("[data-plan]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const plan = btn.getAttribute("data-plan");
+        const url = withTracking(PLAN_URLS[plan] || PLAN_URLS.start);
+        window.open(url, "_blank", "noopener,noreferrer");
+      });
+    });
   </script>
 </body>
 </html>
