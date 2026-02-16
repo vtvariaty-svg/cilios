@@ -9,6 +9,7 @@
   <meta name="theme-color" content="#ff4fa3" />
   <!-- Google tag (gtag.js) -->
 <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17941199389"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -16,6 +17,7 @@
   gtag('js', new Date());
   gtag('config', 'AW-17941199389');
 </script>
+
 
 
 
@@ -959,6 +961,65 @@
 
 
 
-  
+  <script>
+  // ===== Google Ads conversion (Clique Checkout Start) =====
+  const SEND_TO_CHECKOUT_START = "AW-17941199389/lqDJCILcxvkbEJ30g-tC";
+
+  const CHECKOUT = {
+    start:  "https://go.hotmart.com/D104345925A?ap=a455",
+    expert: "https://go.hotmart.com/F104369289Y?ap=80c4",
+    master: "https://go.hotmart.com/E104369325L?ap=f4a1"
+  };
+
+  function getTrackParams() {
+    const p = new URLSearchParams(window.location.search);
+    const keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","gbraid","wbraid","fbclid"];
+    const out = {};
+    keys.forEach(k => { const v = p.get(k); if (v) out[k] = v; });
+    return out;
+  }
+
+  function buildUrlWithParamsSafe(baseUrl, params) {
+    try {
+      const u = new URL(baseUrl);
+      Object.entries(params).forEach(([k,v]) => u.searchParams.set(k, v));
+      return u.toString();
+    } catch (e) {
+      const qs = new URLSearchParams(params).toString();
+      if (!qs) return baseUrl;
+      return baseUrl + (baseUrl.includes("?") ? "&" : "?") + qs;
+    }
+  }
+
+  function fireCheckoutStartConversionSafe() {
+    try {
+      if (typeof gtag === "function") {
+        gtag("event", "conversion", { send_to: SEND_TO_CHECKOUT_START });
+      }
+    } catch (e) {}
+  }
+
+  function goCheckoutSafe(plan) {
+    const base = CHECKOUT[plan] || CHECKOUT.start;
+    const finalUrl = buildUrlWithParamsSafe(base, getTrackParams());
+
+    // dispara conversão (não pode travar o redirect)
+    fireCheckoutStartConversionSafe();
+
+    // redireciona mesmo se gtag não estiver pronto
+    window.location.href = finalUrl;
+  }
+
+  // ✅ Delegação de evento: funciona mesmo sem arquivo script.js
+  document.addEventListener("click", function(e) {
+    const el = e.target.closest("[data-go-plan]");
+    if (!el) return;
+
+    e.preventDefault();
+    const plan = el.getAttribute("data-go-plan") || "start";
+    goCheckoutSafe(plan);
+  });
+</script>
+
 </body>
 </html>
