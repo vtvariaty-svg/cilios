@@ -79,24 +79,3 @@ server.listen(PORT, () => {
   console.log(`Server on :${PORT}`);
 });
 
-// TROQUE PELO LABEL QUANDO CRIAR A CONVERSÃO
-const SEND_TO_START  = "AW-17941199389/w4XZCPTQnvUbEJ30g-tC";
-const SEND_TO_EXPERT = "AW-17941199389/YYYYYYYYYYY";
-const SEND_TO_MASTER = "AW-17941199389/ZZZZZZZZZZZ";
-
-function fireGoogleConversion(sendTo){
-  if(typeof gtag !== "function") return;
-  gtag('event','conversion',{ send_to: sendTo });
-}
-
-// Botões com data-go-plan
-document.querySelectorAll("[data-go-plan]").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    const plan = btn.getAttribute("data-go-plan");
-
-    if(plan==="start")  fireGoogleConversion(SEND_TO_START);
-    if(plan==="expert") fireGoogleConversion(SEND_TO_EXPERT);
-    if(plan==="master") fireGoogleConversion(SEND_TO_MASTER);
-  });
-});
-
