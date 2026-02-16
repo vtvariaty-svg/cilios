@@ -100,15 +100,3 @@ document.querySelectorAll("[data-go-plan]").forEach(btn=>{
   });
 });
 
-const GOOGLE_SEND_TO_START = "AW-17941199389/w4XZCPTQnvUbEJ30g-tC";
-
-function fireGoogleConversion(){
-  if(typeof gtag !== "function") return;
-
-  gtag('event','conversion',{
-    send_to: GOOGLE_SEND_TO_START,
-    value: 1.0,
-    currency: 'BRL'
-  });
-}
-
