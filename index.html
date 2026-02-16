@@ -953,66 +953,12 @@
 
     document.getElementById("y").textContent = new Date().getFullYear();
 
-// ===== Google Ads conversion (Clique Checkout Start) =====
-const SEND_TO_CHECKOUT_START = "AW-17941199389/lqDJCILcxvkbEJ30g-tC";
-
-// Seus links Hotmart (mantém os seus)
-const CHECKOUT = {
-  start:  "https://go.hotmart.com/D104345925A?ap=a455",
-  expert: "https://go.hotmart.com/F104369289Y?ap=80c4",
-  master: "https://go.hotmart.com/E104369325L?ap=f4a1"
-};
-
-// Captura parâmetros de campanha
-function getTrackParams() {
-  const p = new URLSearchParams(window.location.search);
-  const keys = ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid","gbraid","wbraid","fbclid"];
-  const out = {};
-  keys.forEach(k => { const v = p.get(k); if (v) out[k] = v; });
-  return out;
-}
-
-function buildUrlWithParams(baseUrl, params) {
-  const u = new URL(baseUrl);
-  Object.entries(params).forEach(([k,v]) => u.searchParams.set(k, v));
-  return u.toString();
-}
-
-// Dispara conversão no clique
-function fireCheckoutStartConversion() {
-  if (typeof gtag !== "function") return;
-  gtag('event', 'conversion', {
-    send_to: SEND_TO_CHECKOUT_START,
-    // transaction_id: ""  // NÃO use isso como afiliado
-  });
-}
-
-// Navega para checkout (com UTM/gclid)
-function goCheckout(plan) {
-  const params = getTrackParams();
-  const base = CHECKOUT[plan] || CHECKOUT.start;
-  const finalUrl = buildUrlWithParams(base, params);
-
-  // dispara e redireciona
-  fireCheckoutStartConversion();
-
-  // pequeno delay pra garantir envio
-  setTimeout(() => {
-    window.location.href = finalUrl;
-  }, 120);
-}
-
-// Bind nos botões
-document.querySelectorAll("[data-go-plan]").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const plan = btn.getAttribute("data-go-plan") || "start";
-    goCheckout(plan);
-  });
-});
 
 
   </script>
+
+
+
   
 </body>
 </html>
